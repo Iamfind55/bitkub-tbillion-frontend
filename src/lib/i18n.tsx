@@ -76,8 +76,41 @@ const translations = {
     "account.listtrade": "Trade List",
     "account.transaction": "Transactions",
     "account.account": "My Account",
-    "account.privacy": "Identity Verification"
+    "account.privacy": "Identity Verification",
 
+    //login
+    "login.title": "Login",
+    "login.email": "Phone/Email",
+    "login.password": "Password",
+    "login.forgot": "Forgot password",
+    "login.signup": "Register",
+    "register.title": "Create an account",
+    "register.exist": "Already register",
+
+    "alert.login200": "Login success",
+    "alert.signup200": "Register success",
+    "alert.message500": "Interal server error",
+    "trade.timerequired": "Please select time",
+    "trade.timeUpDown": "Plase select up or down!",
+    "trade.amount": "Please enter amount",
+    "trade.enougthAmount": "Yout balance not enougth",
+    "trade.minAmount": "Your amount min",
+
+    "label.name": "Name",
+    "label.phone": "Phone",
+    "label.password": "Password",
+    "label.email": "Email",
+    "label.address": "Address",
+
+    "label.second": "Second",
+    "label.minute": "Minute",
+    "label.hour": "Hours",
+    "label.day": "day",
+    "label.week": "Week",
+
+    "label.reset": "Reset",
+    "button.down": "Down",
+    "button.up": "Up",
   },
   lo: {},
   th: {
@@ -146,6 +179,43 @@ const translations = {
     "account.privacy": "ยืนยันตัวตน",
 
     // Bank account
+
+    // auth
+
+    "login.title": "เข้าสู่ระบบ",
+    "login.email": "โทรศัพท์/อีเมล",
+    "login.password": "รหัสผ่าน",
+    "login.forgot": "ลืมรหัสผ่าน",
+    "login.signup": "ลงทะเบียนเลย",
+    "register.title": "ลงชื่อเข้าใช้บัญชีของคุณ",
+
+
+    "alert.login200": "เข้าสู่ระบบสำเร็จ",
+    "register.signup200": "ลงทะเบียนสำเร็จ",
+    "alert.exist": "อีเมล์ที่ลงทะเบียนไว้แล้ว",
+    "alert.message500": "ข้อผิดพลาดเซิร์ฟเวอร์ภายใน",
+    "trade.timerequired": "โปรดเลือกระยะเวลา",
+    "trade.timeUpDown": "กรุณาเลือก ขึ้น หรือ ลง!",
+    "trade.amount": "กรุณาระบุจำนวนเงิน",
+    "trade.enougthAmount": "ยอดเงินไม่เพียงพอ",
+    "trade.minAmount": "จำนวนเงินขั้นต่ำ",
+
+    "label.name": "ชื่อ",
+    "label.phone": "หมายเลขโทรศัพท์",
+    "label.password": "รหัสผ่าน",
+    "label.email": "อีเมล",
+    "label.address": "ที่อยู่",
+    "label.second": "วินาที",
+    "label.minute": "นาที",
+    "label.hour": "ชั่วโมง",
+    "label.day": "วัน",
+    "label.week": "อาทิตย์",
+
+
+
+    "label.reset": "รีเซ็ต",
+    "button.down": "ลง",
+    "button.up": "ขึ้น",
     
   },
 }

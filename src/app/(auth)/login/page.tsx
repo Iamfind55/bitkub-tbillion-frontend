@@ -1,7 +1,10 @@
+"use client"
+import { useTranslation } from "@/lib/i18n";
 import Link from "next/link";
-import React from "react"; // eslint-disable-line no-use-before-define
 import FormLogin from "./formlogin";
 export default function page() {
+   const { t } = useTranslation();
+
   return (
     <div
       className="max-auto min-h-screen bg-center bg-no-repeat bg-cover"
@@ -26,7 +29,7 @@ export default function page() {
                   </Link>
                 </div>
                 <div className="text-3xl text-center font-bold">
-                  เข้าสู่ระบบ
+                  {t("login.title")}
                 </div>
                 <FormLogin />
               </div>
