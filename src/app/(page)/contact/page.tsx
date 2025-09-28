@@ -1,29 +1,52 @@
-import Link from "next/link";
-import Main from "./main";
+import { CiMail, CiPhone } from "react-icons/ci";
 
 export default function page() {
 
   return (
     <div>
-      <div className="container px-5 mx-auto pt-[120px] select-none">
-        <h2 className="text-xl text-center font-bold">ติดต่อเรา</h2>
-        <div className="flex md:flex-row flex-col gap-10 justify-center items-center w-full mt-10">
-          <Link
-            // href="https://lin.ee/NNcSXO3"
-            // href="https://line.me/R/ti/p/@613cvaul"
-            href="https://lin.ee/xL7LGcR"
-            className="text-center hover:opacity-95"
-          >
-            <img
-              src="/images/latest-line.jpeg"
-              className="w-[180px] bg-white p-3 rounded-md shadow-lg"
-              alt="latest-line.jpeg"
-            />
-            <div className="pt-3">ไลน์: @xL7LGcR</div>
-          </Link>
-        </div>
-        <div className="flex md:flex-row flex-col gap-10 justify-center items-center w-full mt-5">
-          <Main />
+      <div className="container px-8 sm:px-16 mx-auto pt-[120px] select-none">
+        <div className="space-y-8">
+          <div>
+            <h2 className="text-2xl font-bold text-foreground mb-4 text-balance">Get in Touch with Our Trading Experts</h2>
+            <p className="text-md text-muted-foreground leading-relaxed">
+              {
+                "Need help with your crypto trading strategy? Our team of experts is here to support you 24/7 with personalized guidance and technical assistance."
+              }
+            </p>
+          </div>
+
+          <div className="flex flex-col sm:flex-row items-start justify-between gap-4">
+            <div className="w-full p-4 bg-card border border-yellow-500 rounded-md">
+              <div className="flex items-start gap-4">
+                <div className="p-2 bg-orange-100 rounded-lg border border-orange-300">
+                  <CiMail className="h-5 w-5 text-orange-500" />
+                </div>
+                <div>
+                  <h3 className="text-md font-semibold text-card-foreground mb-1">Email Support</h3>
+                  <a
+                    href="mailto:support@cryptotradepro.com"
+                    className="text-sm text-accent hover:text-accent/80 transition-colors font-medium"
+                  >
+                    tbillion@gmail.com
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div className="w-full p-4 bg-card border border-yellow-500 rounded-md">
+              <div className="flex items-start gap-4">
+                <div className="p-2 bg-orange-100 rounded-lg border border-orange-300">
+                  <CiPhone className="h-5 w-5 text-orange-500" />
+                </div>
+                <div>
+                  <h3 className="text-md font-semibold text-card-foreground mb-1">Phone Support</h3>
+                  <a href="tel:+1-800-CRYPTO-1" className="text-sm text-accent hover:text-accent/80 transition-colors font-medium">
+                    +856 20 93046151
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

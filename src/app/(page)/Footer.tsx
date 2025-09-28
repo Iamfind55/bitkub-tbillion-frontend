@@ -3,8 +3,8 @@ import Link from "next/link";
 function Footer() {
   const socialList = [
     {
-      icon: "/images/icons-line.png",
-      title: "@823saamn",
+      icon: "",
+      title: "+856 20 93046151",
       link: "https://lin.ee/NNcSXO3",
     },
   ];
@@ -27,7 +27,7 @@ function Footer() {
           {socialList?.map((item, index) => (
             <div key={index} className="mt-3">
               <Link href={item.link} className="flex">
-                <img src={item.icon} alt="" className="w-8" />
+                {/* <img src={item.icon} alt="" className="w-8" /> */}
                 <p className="px-2 flex items-center">{item.title}</p>
               </Link>
             </div>

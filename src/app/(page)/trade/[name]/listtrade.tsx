@@ -16,7 +16,7 @@ export default function Listtrade() {
     setData(data);
   };
   return (
-    <div className="w-full grid grid-cols-12 gap-y-2 gap-x-4 ">
+    <div className="w-full grid grid-cols-12 gap-y-2 gap-x-4">
       {data.length > 0 &&
         data?.map(
           (
@@ -35,7 +35,7 @@ export default function Listtrade() {
                       <img
                         src={`/icons/${item?.icon}`}
                         alt=""
-                        className="md:w-12 md:h-12 w-10 h-10"
+                        className="md:w-8 md:h-8 w-6 h-6"
                       />
                       <p>{item?.title}</p>
                     </div>

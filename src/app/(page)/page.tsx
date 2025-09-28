@@ -21,7 +21,7 @@ export default async function page() {
       icon: (
         <img
           src="/images/turn-back.png"
-          className="shadow-lg md:w-14 md:h-14 h-10 w-10"
+          className="shadow-lg md:w-10 md:h-10 h-8 w-8"
           alt=""
         />
       ),
@@ -32,7 +32,7 @@ export default async function page() {
       icon: (
         <img
           src="/images/promotion.png"
-          className="shadow-lg md:w-14 md:h-14 h-10 w-10"
+          className="shadow-lg md:w-10 md:h-10 h-8 w-8"
           alt=""
         />
       ),
@@ -43,7 +43,7 @@ export default async function page() {
       icon: (
         <img
           src="/images/cryptobank.png"
-          className="shadow-lg md:w-14 md:h-14 h-10 w-10"
+          className="shadow-lg md:w-10 md:h-10 h-8 w-8"
           alt=""
         />
       ),
@@ -54,7 +54,7 @@ export default async function page() {
       icon: (
         <img
           src="/images/money-bag.png"
-          className="shadow-lg md:w-14 md:h-14 h-10 w-10"
+          className="shadow-lg md:w-10 md:h-10 h-8 w-8"
           alt=""
         />
       ),
@@ -122,7 +122,7 @@ export default async function page() {
             <Listtrade />
           </div>
 
-          <div className="container mx-auto  mt-20 md:mt-25  lg:mt-30">
+          <div className="container mx-auto  mt-20 md:mt-25 lg:mt-30">
             <div className="w-full grid grid-cols-12 gap-2">
               {cardFeatures.map((item, index) => (
                 <div
