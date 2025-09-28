@@ -7,7 +7,7 @@ export default function Candlestick({ data }: { data: any | [[]] }) {
   const [chartHeight, setChartHeight] = useState(window.innerHeight - 240); // Default height
 
   useEffect(() => {
-    const updateChartHeight = () => { 
+    const updateChartHeight = () => {
       setChartHeight(window.innerHeight - 240);
     };
     // Update chart height when window is resized
@@ -77,13 +77,33 @@ export default function Candlestick({ data }: { data: any | [[]] }) {
       },
     },
 
+    // chart: {
+    //   type: "candlestick",
+    //   // height: (9 / 16 * 100) + "%", // 16:9 ratio
+    //   height: chartHeight, // 16:9 ratio
+    //   backgroundColor: "#26272b00",
+    // },
     chart: {
       type: "candlestick",
-      // height: (9 / 16 * 100) + "%", // 16:9 ratio
-      height: chartHeight, // 16:9 ratio
+      height: chartHeight,
       backgroundColor: "#26272b00",
+      zoomType: "x",   // drag to zoom on x-axis
+      panning: {
+        enabled: true,
+        type: "x",     // allow left-right pan
+      },
+      pinchType: "x",  // enable touch zoom on mobile
+      resetZoomButton: {
+        position: {
+          align: "right",
+          verticalAlign: "top"
+        },
+        theme: {
+          fill: "#333",
+          style: { color: "#fff" }
+        }
+      }
     },
-
     navigator: {
       enabled: false, // Set to false to hide the navigator
     },
