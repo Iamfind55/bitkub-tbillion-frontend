@@ -87,7 +87,7 @@ export default function TableTransaction() {
                     <Iconattachmoney />
                   </div>
                   <div>
-                    <div className="text-md uppercase">ประเภท: {item?.type}</div>
+                    <div className="text-md uppercase">{t("hero.type")}: {item?.type}</div>
                     <div className="text-sm text-success font-bold uppercase">
                       {t("hero.amount")}: {FormatNumber(Number(item?.amount))}$
                     </div>

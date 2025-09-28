@@ -430,8 +430,6 @@ const translations = {
     "hero.percent": "เปอร์เซ็นต์",
     "hero.type": "หมวดหมู่",
     "hero.trade": "ซื้อขาย",
-
-
   },
 }
 
