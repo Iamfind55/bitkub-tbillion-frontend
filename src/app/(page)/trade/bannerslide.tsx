@@ -10,7 +10,7 @@ export default function Bannerslide() {
         spaceBetween={30}
         centeredSlides={true}
         autoplay={{
-          delay: 3000,
+          delay: 10000,
           disableOnInteraction: false,
         }}
         navigation={true}
@@ -23,7 +23,7 @@ export default function Bannerslide() {
             className="banner-slide bg-cover bg-center"
             style={{
               backgroundImage:
-                "linear-gradient(#2a356aa2, #ffc4002a), url('/slide/slide1.jpg')",
+                "linear-gradient(#2a356aa2, #ffc4002a), url('https://images.pexels.com/photos/7567440/pexels-photo-7567440.jpeg')",
             }}
           ></div>
         </SwiperSlide>
@@ -32,7 +32,7 @@ export default function Bannerslide() {
             className="banner-slide bg-cover bg-center"
             style={{
               backgroundImage:
-                "linear-gradient(#2a356aa2, #ffc4002a), url('/slide/slide2.jpg')",
+                "linear-gradient(#2a356aa2, #ffc4002a), url('https://images.pexels.com/photos/6771427/pexels-photo-6771427.jpeg')",
             }}
           ></div>
         </SwiperSlide>
@@ -41,7 +41,7 @@ export default function Bannerslide() {
             className="banner-slide bg-cover bg-center"
             style={{
               backgroundImage:
-                "linear-gradient(#2a356aa2, #ffc4002a), url('/slide/slide3.jpg')",
+                "linear-gradient(#2a356aa2, #ffc4002a), url('https://images.pexels.com/photos/6770775/pexels-photo-6770775.jpeg')",
             }}
           ></div>
         </SwiperSlide>
@@ -50,7 +50,7 @@ export default function Bannerslide() {
             className="banner-slide bg-cover bg-center"
             style={{
               backgroundImage:
-                "linear-gradient(#2a356aa2, #ffc4002a), url('/slide/slide4.jpg')",
+                "linear-gradient(#2a356aa2, #ffc4002a), url('https://images.pexels.com/photos/7567486/pexels-photo-7567486.jpeg')",
             }}
           ></div>
         </SwiperSlide>
@@ -59,7 +59,7 @@ export default function Bannerslide() {
             className="banner-slide bg-cover bg-center"
             style={{
               backgroundImage:
-                "linear-gradient(#2a356aa2, #ffc4002a), url('/slide/slide5.jpg')",
+                "linear-gradient(#2a356aa2, #ffc4002a), url('https://images.pexels.com/photos/5833309/pexels-photo-5833309.jpeg')",
             }}
           ></div>
         </SwiperSlide>

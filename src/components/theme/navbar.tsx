@@ -104,22 +104,21 @@ export default function Navbar() {
     <>
       <nav
         className={`bg-gradient-to-t fixed top-0 right-0 left-0 transition-all z-30 duration-700 
-         ${
-           scroll
-             ? "py-3 text-white  shadow backdrop-blur  from-primary/60 to-primary "
-             : "py-5 text-white  from-green-400/0 to-primary/10"
-         } 
+         ${scroll
+            ? "py-3 text-white  shadow backdrop-blur  from-primary/60 to-primary "
+            : "py-5 text-white  from-green-400/0 to-primary/10"
+          } 
          `}
       >
         <div className="mx-auto container flex items-center justify-between  px-5">
           <Link href="/" className="logo flex items-center">
             <img
-              src="/images/logo.png"
+              src="/new-logo/logo.jpeg"
               alt="logo"
-              className="h-8 w-8 lg:h-10 lg:w-10 "
+              className="h-8 w-8 lg:h-10 lg:w-10 rounded-sm"
             />
             <span className="text-md sm:text-xl lg:text-2xl font-bold ml-2 select-none uppercase">
-              Bitkubnek
+              Tbillions
             </span>
           </Link>
 
@@ -275,17 +274,16 @@ export default function Navbar() {
 
       <div
         id="mobile"
-        className={`lg:invisible visible fixed z-30 top-0 p-5 left-0 right-0 bottom-0 bg-primary text-white ${
-          toggle ? "visible" : "invisible"
-        }`}
+        className={`lg:invisible visible fixed z-30 top-0 p-5 left-0 right-0 bottom-0 bg-primary text-white ${toggle ? "visible" : "invisible"
+          }`}
       >
         <Link
           href="/"
           onClick={() => setToggle(!toggle)}
           className="logo flex flex-col items-center"
         >
-          <img src="/images/logo.png" alt="logo" className="h-20 w-20" />
-          <span className="text-2xl font-bold ml-2 my-5">bitkubnek</span>
+          <img src="/new-logo/logo.jpeg" alt="logo" className="h-20 w-20 rounded-sm" />
+          <span className="text-2xl font-bold ml-2 my-5">tbillions</span>
         </Link>
 
         <button

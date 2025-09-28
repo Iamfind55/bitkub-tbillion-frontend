@@ -12,11 +12,11 @@ const Noto_Sans = Noto_Sans_Thai({
 });
 
 export const metadata: Metadata = {
-  title: "thtrading.net",
-  description: "thtrading.net",
+  title: "tbillions.com",
+  description: "tbillions.com",
   keywords: [
-    "thtrading.net",
-    "bitkubnek",
+    "tbillions",
+    "tbillions.com",
     "trade",
     "bitcoin",
     "coin",

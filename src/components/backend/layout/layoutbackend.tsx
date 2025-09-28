@@ -12,14 +12,13 @@ type Props = {
 
 export default function Layoutbackend({ children }: Props) {
   const [open, setOpen] = React.useState(true);
-  const pathname = usePathname(); 
+  const pathname = usePathname();
   return (
     <div className="flex w-full">
       {/* menu sidebar */}
       <div
-        className={`${
-          open ? "lg:min-w-[260px] visible" : "lg:min-w-0 invisible"
-        } 
+        className={`${open ? "lg:min-w-[260px] visible" : "lg:min-w-0 invisible"
+          } 
              lg:bg-transparent bg-dark/60 backdrop-blur-sm lg:static fixed z-30 min-h-screen 
              min-w-full select-none transition-all duration-200`}
         onClick={() => {
@@ -37,9 +36,9 @@ export default function Layoutbackend({ children }: Props) {
             className="flex w-full justify-center  overflow-hidden"
           >
             <img
-              src="/images/logo.png"
+              src="/new-logo/logo.jpeg"
               alt="logo"
-              className="w-[60px] h-[60px] rounded-full border-4 shadow border-white/80"
+              className="w-[60px] h-[60px] rounded-full border-4 shadow border-white/80 rounded-sm"
             />
           </Link>
         </div>
