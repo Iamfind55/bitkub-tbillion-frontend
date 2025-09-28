@@ -1,19 +1,20 @@
+"use client"
+
 import { FormatDatetime, FormatNumber } from "@/helper/format";
 import useApi from "@/services/api";
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { ListTypeTrade } from "@/data/listtypetrade";
 import { ITransactionCoin } from "@/interface/type";
-import Iconedit from "@/icon/iconedit";
 import ReactPaginate from "react-paginate";
 import Numberfield from "@/utils/Numberfield";
 import Textfield from "@/utils/Textfield";
 import MyModal from "@/utils/modal";
 import Button from "@/utils/Button";
-import Iconreturnback from "@/icon/iconreturnback";
-import Iconreturnnext from "@/icon/iconreturnnext";
+import { useTranslation } from "@/lib/i18n";
 
 export default function ListCoin() {
+  const { t } = useTranslation();
   const [pagination, setPagination] = useState<{
     pageSize: number;
     page: number;
@@ -54,11 +55,11 @@ export default function ListCoin() {
 
   const getStatusBadge = (status: string) => {
     if (status === "rejected") {
-      return <span className="badge badge-danger">ปฏิเสธ</span>;
+      return <span className="badge badge-danger">{t("list_coin_reject")}</span>;
     } else if (status === "pending") {
-      return <span className="badge badge-warning">รอดำเนินการ</span>;
+      return <span className="badge badge-warning">{t("list_coin_pending")}</span>;
     } else if (status == "completed") {
-      return <span className="badge badge-success">สำเร็จ</span>;
+      return <span className="badge badge-success">{t("list_coin_completed")}</span>;
     }
   };
   const getStatuType = (status: string) => {
@@ -66,16 +67,16 @@ export default function ListCoin() {
       return (
         <div>
           <div className=" bg-danger w-[50px] h-[50px] rounded-full flex justify-center items-center">
-          ถอน
-          </div> 
+            ถอน
+          </div>
         </div>
       );
     } else {
       return (
         <div>
           <div className=" bg-success w-[50px] h-[50px]  rounded-full flex justify-center items-center">
-          ฝาก
-          </div> 
+            ฝาก
+          </div>
         </div>
       );
     }
@@ -98,28 +99,28 @@ export default function ListCoin() {
                   {getStatuType(item?.type)}
 
                   <div className="w-full">
-                    
+
                     <div className="text-sm w-fll flex justify-between">
-                    <div className="py-1 flex items-center gap-2">
-                      <img
-                        src={`/icons/${icon}`}
-                        alt=""
-                        className="w-5 h-5 rounded-full shadow-md"
-                      />
-                      <span>{item?.name}</span>
-                    </div>
+                      <div className="py-1 flex items-center gap-2">
+                        <img
+                          src={`/icons/${icon}`}
+                          alt=""
+                          className="w-5 h-5 rounded-full shadow-md"
+                        />
+                        <span>{item?.name}</span>
+                      </div>
                       <span>{getStatusBadge(item?.status)}</span>
                     </div>
                     <div className="text-md ">
-                      จำนวน:{" "}
+                      {t("list_coin_amount")}:{" "}
                       <span className="font-bold">
-                        {item?.type=='withdraw'?'-':'+'}
+                        {item?.type == 'withdraw' ? '-' : '+'}
                         {FormatNumber(Number(item.amount))}
                       </span>
                     </div>
 
                     <div className="text-sm mt-1">
-                      เมื่อ: {FormatDatetime(item?.createdAt)}
+                      {t("list_coin_when")}: {FormatDatetime(item?.createdAt)}
                     </div>
                     {/* <button
                       className="text-sm flex gap-2 items-center absolute p-2 top-1 right-1"
@@ -135,16 +136,15 @@ export default function ListCoin() {
             );
           })
         ) : (
-          <div className="col-span-12 text-center">ไม่มีข้อมูล</div>
+          <div className="col-span-12 text-center">{t("list_coin_no_data")}</div>
         )}
       </div>
 
       <div
-        className={`mt-5 ${
-          Number(pagination?.total) > Number(pagination?.pageSize)
-            ? "block"
-            : "hidden"
-        }`}
+        className={`mt-5 ${Number(pagination?.total) > Number(pagination?.pageSize)
+          ? "block"
+          : "hidden"
+          }`}
       >
         <ReactPaginate
           activeClassName="active"
@@ -175,19 +175,19 @@ export default function ListCoin() {
           <div className="flex flex-col gap-3">
             <Textfield
               required
-              title="ชื่อ"
+              title={t("list_coin_name")}
               name="name"
-              placeholder="ชื่อ..."
+              placeholder={t("list_coin_name_placeholder")}
               id="name"
               onChange={keyup}
             />
 
             <Numberfield
-              title="จำนวนเหรียญ"
+              title={t("list_coin_amount")}
               id="amount"
               required
               type="number"
-              placeholder="จำนวนเหรียญ..."
+              placeholder={t("list_coin_amount_placeholder")}
               name="amount"
             />
 

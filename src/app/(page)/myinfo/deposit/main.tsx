@@ -2,14 +2,15 @@
 
 import { LinkApi } from "@/enum/linkapi";
 import { IDataQR } from "@/interface/type";
+import { useTranslation } from "@/lib/i18n";
 import useApi from "@/services/api";
-import { useQrcodes } from "@/services/qrcodeservice";
 import { getTypetradePrice } from "@/services/services";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
 function Main() {
+  const { t } = useTranslation();
   const router = useRouter();
   const api = useApi();
   const [data, setData] = useState<
@@ -79,6 +80,7 @@ function Main() {
         console.error(error);
       });
   };
+
   return (
     <div className="container mx-auto flex justify-center">
       <form
@@ -87,7 +89,7 @@ function Main() {
       >
         <div>
           <div className="mt-[80px]">
-            <p className="text-center">บัญชีของเหรียญ</p>
+            <p className="text-center">{t("deposit.title")}</p>
             <div className="flex justify-center mt-3">
               {dataqr?.length > 0 ? (
                 <img
@@ -105,14 +107,14 @@ function Main() {
             </div>
             <div className="border rounded border-slate-400/30 px-5 py-2 mt-5 text-sm text-gray-200">
               <div>
-                <div className="text-slate-400">Network:</div>{" "}
+                <div className="text-slate-400">{t("deposit.network")}:</div>{" "}
                 {dataqr[0]?.name || "Tron (TRC20)"}
               </div>
               <div className="border-t border-slate-400/30 my-2" />
               <div>
-                <div className="text-slate-400">Deposit Address:</div>{" "}
+                <div className="text-slate-400">{t("deposit.address")}:</div>{" "}
                 {dataqr[0]?.accountNumber ||
-                  "TTzun6e27da18ojSCutWKDGjAkCv4db3pf"}
+                  "1FdiU4BTJWPpKxxaJpa2GZFfMPhjuZq9MV"}
               </div>
             </div>
             <div className="mt-5">
@@ -120,7 +122,7 @@ function Main() {
                 className="block mb-1 text-sm font-medium text-gray-200"
                 htmlFor="coin_type"
               >
-                ประเภทเหรียญ
+                {t("deposit.coin_type")}
               </label>
               <select
                 required
@@ -143,7 +145,7 @@ function Main() {
 
             <div className="mt-3">
               <label className="block mb-1 text-sm font-medium text-gray-200">
-                จำนวนเหรียญฝาก
+                {t("deposit.amount")}
               </label>
               <div className="relative">
                 <input
@@ -159,7 +161,7 @@ function Main() {
             </div>
             <div className="mt-3">
               <label className="block mb-1 text-sm font-medium text-gray-200">
-                อัพโหลด
+                {t("deposit.upload")}
               </label>
               <div className="relative">
                 <input
@@ -178,7 +180,7 @@ function Main() {
               className="py-2 px-3 bg-success rounded mt-5"
               disabled={loading}
             >
-              {loading ? "กำลังโหลด..." : "ยืนยัน"}
+              {loading ? t("deposit.uploading") : t("deposit.confirm")}
             </button>
           </div>
         </div>

@@ -1,8 +1,10 @@
 "use client";
+
 import { limitOptions } from "@/enum/option";
 import { FormatDatetime, FormatNumber } from "@/helper/format";
 import Iconcheckinvoice from "@/icon/iconcheckinvoice";
 import { IFormWithdraw, IWithdraw } from "@/interface/withdrawtype";
+import { useTranslation } from "@/lib/i18n";
 import { refreshwallet } from "@/redux/slice/walletSlice";
 import useApi from "@/services/api";
 import Button from "@/utils/Button";
@@ -17,6 +19,8 @@ import { toast } from "react-toastify";
 import { io } from "socket.io-client";
 
 export default function TableWithdraw() {
+  const { t } = useTranslation();
+
   const formempty: IFormWithdraw = {
     name: "",
     accountName: "",
@@ -79,7 +83,7 @@ export default function TableWithdraw() {
       params: formwithdraw,
     }).then((res) => {
       if (res?.status == "200") {
-        toast.success("ถอนเงินสำเร็จ!");
+        toast.success(t("withdraw.success"));
         setIsopen(false);
         dispatch(refreshwallet());
         loadwithdraw();
@@ -88,7 +92,7 @@ export default function TableWithdraw() {
   };
 
   console.log(datawithdraw);
-  
+
   return (
     <div className="w-full overflow-x-auto mt-8">
       <div className="w-full flex justify-between items-center">
@@ -113,7 +117,7 @@ export default function TableWithdraw() {
           <span className="font-bold">
             <Iconcheckinvoice />
           </span>{" "}
-          ถอนเงิน
+          {t("wirthdraw")}
         </button>
       </div>
 
@@ -128,16 +132,16 @@ export default function TableWithdraw() {
               <div>
                 <div className="flex flex-col gap-1">
                   <div className="text-sm uppercase">
-                    ชื่อธนาคาร: {item?.name}{" "}
+                    {t("bank.bank_name")}: {item?.name}{" "}
                   </div>
                   <div className="text-sm uppercase">
-                    ชื่อบัญชี: {item?.accountName}
+                    {t("bank.bank_account_name")}: {item?.accountName}
                   </div>
                   <div className="text-sm uppercase">
-                    เลขบัญชี: {item?.accountNumber}
+                    {t("bank.bank_account_number")}: {item?.accountNumber}
                   </div>
                   <div className="text-sm text-success font-bold">
-                    จำนวน: {FormatNumber(Number(item?.amount))} USDT
+                    {t("list_coin_amount")}: {FormatNumber(Number(item?.amount))} USDT
                   </div>
 
                   <div className="w-full flex items-center justify-between ">
@@ -154,10 +158,10 @@ export default function TableWithdraw() {
                         }`}
                     >
                       {item?.status == "pending"
-                        ? "รอดำเนินการ"
+                        ? t("list_coin_pending")
                         : item?.status == "completed"
-                          ? "สมบูรณ์"
-                          : "ถูกปฏิเสธ"}
+                          ? t("list_coin_completed")
+                          : t("list_coin_reject")}
                     </div>
                   </div>
                 </div>
@@ -165,7 +169,7 @@ export default function TableWithdraw() {
             </div>
           ))
         ) : (
-          <div className="col-span-12 text-center">ไม่มีข้อมูล</div>
+          <div className="col-span-12 text-center">{t("list_coin_no_data")}</div>
         )}
       </div>
       <div
@@ -204,9 +208,9 @@ export default function TableWithdraw() {
             <Textfield
               required
               value={formwithdraw.name}
-              title="ชื่อธนาคาร"
+              title={t("bank.bank_name")}
               name="name"
-              placeholder="ชื่อธนาคาร..."
+              placeholder={t("bank.bank_name_placeholder")}
               id="name"
               onChange={keyup}
             />
@@ -214,9 +218,9 @@ export default function TableWithdraw() {
             <Textfield
               required
               value={formwithdraw.accountName}
-              title="ชื่อบัญชี"
+              title={t("bank.bank_account_name")}
               name="accountName"
-              placeholder="ชื่อบัญชี..."
+              placeholder={t("bank.bank_account_name_placeholder")}
               id="accountName"
               onChange={keyup}
             />
@@ -224,19 +228,19 @@ export default function TableWithdraw() {
             <Textfield
               required
               value={formwithdraw.accountNumber}
-              title="หมายเลขบัญชี"
+              title={t("bank.bank_account_number")}
               name="accountNumber"
-              placeholder="หมายเลขบัญชี..."
+              placeholder={t("bank.bank_account_number_placeholder")}
               id="accountNumber"
               onChange={keyup}
             />
 
             <Numberfield
-              title="จำนวนเงิน"
+              title={t("withdraw_amount")}
               id="amount"
               required
               type="number"
-              placeholder="จำนวนเงิน..."
+              placeholder={t("withdraw_amount_placeholder")}
               name="amount"
               value={formwithdraw.amount}
               onChange={(e) => {
@@ -250,7 +254,7 @@ export default function TableWithdraw() {
 
             <Button
               value="Confirm"
-              title="ยืนยัน"
+              title={t("confirm.button")}
               className="bg-warning text-white rounded  py-3 mt-3"
             />
           </div>

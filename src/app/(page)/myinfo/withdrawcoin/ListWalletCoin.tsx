@@ -1,3 +1,5 @@
+"use client"
+
 import { FormatNumber } from "@/helper/format";
 import { IListcoinType } from "@/interface/type";
 import useApi from "@/services/api";
@@ -9,8 +11,10 @@ import Button from "@/utils/Button";
 import MyModal from "@/utils/modal";
 import Textfield from "@/utils/Textfield";
 import Numberfield from "@/utils/Numberfield";
+import { useTranslation } from "@/lib/i18n";
 
 export default function ListWalletCoin() {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const [isopen, setIsopen] = useState(false);
   const api = useApi();
@@ -48,17 +52,17 @@ export default function ListWalletCoin() {
   const handlewithdraw = (e: React.FormEvent) => {
     e.preventDefault();
     if (!formwithdraw?.walletId) {
-      toast.warning("กรุณาเลือกกระเป๋าก่อน");
+      toast.warning(t("coin_deposit.warning1"));
       return;
     }
 
     if (!formwithdraw?.amount || formwithdraw.amount < 1) {
-      toast.warning("กรุณาระบุจำนวนเหรียญ");
+      toast.warning(t("coin_deposit.warning2"));
       return;
     }
 
     if (formwithdraw.amount > totalwallet) {
-      toast.warning("เหรียญของคุณไม่เพียงพอ");
+      toast.warning(t("coin_deposit.warning3"));
       return;
     }
 
@@ -71,14 +75,14 @@ export default function ListWalletCoin() {
         setIsopen(false);
         setFormwithdraw({ name: "", walletId: "", amount: 0 });
         LoadData();
-        toast.success("สร้างกานถอนเหรียญสำเร็จ!");
+        toast.success(t("coin_deposit.success"));
       } else {
         console.error("Withdrawal failed:", res);
-        toast.error("การถอนเหรียญล้มเหลว");
+        toast.error(t("coin_deposit.failed"));
       }
     }).catch((error) => {
       console.error("Withdrawal error:", error);
-      toast.error("เกิดข้อผิดพลาดในการถอนเหรียญ");
+      toast.error(t("coin_deposit.failed1"));
     });
   };
 
@@ -121,7 +125,7 @@ export default function ListWalletCoin() {
                 </div>
                 <div className="text-md font-bold flex gap-2 justify-center mt-3 w-full">
                   <Button
-                    title="ถอน"
+                    title={t("withdraw.button")}
                     className="bg-success text-[12px] px-4 py-2 rounded"
                     onClick={() => {
                       setIsopen(true);
@@ -150,9 +154,9 @@ export default function ListWalletCoin() {
           <div className="flex flex-col gap-3">
             <Textfield
               required
-              title="ประเภทเหรียญ"
+              title={t("coin_deposit.coin_type")}
               name="name"
-              placeholder="ประเภทเหรียญ..."
+              placeholder={t("coin_deposit.coin_type_placeholder")}
               value={formwithdraw?.name}
               id="name"
               disabled
@@ -160,11 +164,11 @@ export default function ListWalletCoin() {
               onChange={keyup}
             />
             <Numberfield
-              title="จำนวนเหรียญ"
+              title={t("coin_deposit.amount")}
               id="amount"
               required
               type="number"
-              placeholder="จำนวนเหรียญ..."
+              placeholder={t("coin_deposit.amount_placeholder")}
               name="amount"
               onChange={(e: any) => {
                 const numbers = parseFloat(e.target.value.replace(/,/g, ""));
@@ -177,7 +181,7 @@ export default function ListWalletCoin() {
 
             <Button
               value="Confirm"
-              title="ยืนยัน"
+              title={t("confirm.button")}
               className="bg-success text-white rounded py-3 mt-3"
             />
           </div>

@@ -67,7 +67,7 @@ const translations = {
     "contact.phone": "Phone Support",
 
     // my account page:
-    "account.my_info":"My infomation",
+    "account.my_info": "My infomation",
     "account.bank_account": "Bank Account",
     "account.coin_deposit": "Coin Deposit",
     "account.coin_withdraw": "Coin Withdrawal",
@@ -76,8 +76,68 @@ const translations = {
     "account.listtrade": "Trade List",
     "account.transaction": "Transactions",
     "account.account": "My Account",
-    "account.privacy": "Identity Verification"
+    "account.privacy": "Identity Verification",
 
+    // Bank account
+    "bank.manage": "Manage Banks",
+    "bank.create": "Add New Bank",
+    "bank.create_title": "Create Bank Information",
+    "bank.update_title": "Update Bank Information",
+    "bank.bank_name": "Bank Name",
+    "bank.bank_name_placeholder": "Enter bank name",
+    "bank.bank_account_name": "Account Name",
+    "bank.bank_account_name_placeholder": "Enter account name",
+    "bank.bank_account_number": "Account Number",
+    "bank.bank_account_number_placeholder": "Enter account number",
+
+    // Coin deposit:
+    "deposit.title": "Coin Account",
+    "deposit.network": "Network",
+    "deposit.address": "Account Address",
+    "deposit.coin_type": "Coin Type",
+    "deposit.amount": "Deposit Amount",
+    "deposit.upload": "Upload",
+    "deposit.uploading": "Uploading...",
+    "deposit.confirm": "Confirm",
+
+    // Coin deposit:
+    "coin_deposit.tittle": "Coin Wallet",
+    "coin_deposit.warning1": "Please select a wallet first",
+    "coin_deposit.warning2": "Please enter the coin amount",
+    "coin_deposit.warning3": "Insufficient coins",
+    "coin_deposit.success": "Coin withdrawal created successfully",
+    "coin_deposit.failed": "Coin withdrawal failed",
+    "coin_deposit.failed1": "An error occurred during coin withdrawal",
+
+    "coin_deposit.coin_type": "Coin Type",
+    "coin_deposit.coin_type_placeholder": "Coin type...",
+    "coin_deposit.amount": "Amount",
+    "coin_deposit.amount_placeholder": "Amount...",
+
+    // coin transaction:
+    "coin_transaction_title": "Coin Transactions",
+    "list_coin_name": "Name",
+    "list_coin_name_placeholder": "Name...",
+    "list_coin_amount": "Coin Amount",
+    "list_coin_amount_placeholder": "Coin Amount...",
+    "list_coin_no_data": "No Data",
+    "list_coin_when": "When",
+    "list_coin_reject": "Rejected",
+    "list_coin_pending": "Pending",
+    "list_coin_completed": "Completed",
+
+    // withdraw:
+    "withdraw.title": "Withdrawal List",
+    "withdraw.success": "Withdrawal Successful!",
+    "wirthdraw": "Withdraw",
+    "withdraw_amount": "Amount",
+    "withdraw_amount_placeholder": "Amount...",
+
+    // global
+    "close.button": "Close",
+    "save.button": "Save",
+    "withdraw.button": "Withdraw",
+    "confirm.button": "Confirm"
   },
   lo: {},
   th: {
@@ -146,7 +206,65 @@ const translations = {
     "account.privacy": "ยืนยันตัวตน",
 
     // Bank account
-    
+    "bank.manage": "จัดการธนาคาร",
+    "bank.create": "เพิ่มธนาคารใหม่",
+    "bank.create_title": "สร้างข้อมูลธนาคาร",
+    "bank.update_title": "อัปเดตข้อมูลธนาคาร",
+    "bank.bank_name": "ชื่อธนาคาร",
+    "bank.bank_name_placeholder": "กรอกชื่อธนาคาร",
+    "bank.bank_account_name": "ชื่อบัญชี",
+    "bank.bank_account_name_placeholder": "กรอกชื่อบัญชี",
+    "bank.bank_account_number": "เลขบัญชี",
+    "bank.bank_account_number_placeholder": "กรอกเลขบัญชี",
+
+    // Coin deposit:
+    "deposit.title": "บัญชีของเหรียญ",
+    "deposit.network": "เครือ",
+    "deposit.address": "ที่อยู่บัญชี",
+    "deposit.coin_type": "ประเภทเหรียญ",
+    "deposit.amount": "จำนวนเหรียญฝาก",
+    "deposit.upload": "อัพโหลด",
+    "deposit.uploading": "กำลังโหลด...",
+    "deposit.confirm": "ยืนยัน",
+
+    // Coin deposit:
+    "coin_deposit.tittle": "กระเป๋าเหรียญ",
+    "coin_deposit.warning1": "กรุณาเลือกกระเป๋าก่อน",
+    "coin_deposit.warning2": "กรุณาระบุจำนวนเหรียญ",
+    "coin_deposit.warning3": "เหรียญของคุณไม่เพียงพอ",
+    "coin_deposit.success": "สร้างกานถอนเหรียญสำเร็จ",
+    "coin_deposit.failed": "การถอนเหรียญล้มเหลว",
+    "coin_deposit.failed1": "เกิดข้อผิดพลาดในการถอนเหรียญ",
+
+    "coin_deposit.coin_type": "ประเภทเหรียญ",
+    "coin_deposit.coin_type_placeholder": "ประเภทเหรียญ...",
+    "coin_deposit.amount": "จำนวนเหรียญ",
+    "coin_deposit.amount_placeholder": "จำนวนเหรียญ....",
+
+    // coin transaction and list coin:
+    "coin_transaction_title": "ประวัธุรกรรมเหรียญ",
+    "list_coin_name": "ชื่อ",
+    "list_coin_name_placeholder": "ชื่อ...",
+    "list_coin_amount": "จำนวนเหรียญ",
+    "list_coin_amount_placeholder": "จำนวนเหรียญ...",
+    "list_coin_no_data": "ไม่มีข้อมูล",
+    "list_coin_when": "เมื่อ",
+    "list_coin_reject": "ปฏิเสธ",
+    "list_coin_pending": "รอดำเนินการ",
+    "list_coin_completed": "สำเร็จ",
+
+    // withdraw:
+    "withdraw.title": "รายการ ถอนเงิน",
+    "withdraw.success": "ถอนเงินสำเร็จ!",
+    "wirthdraw": "ถอนเงิน",
+    "withdraw_amount": "จำนวนเงิน",
+    "withdraw_amount_placeholder": "จำนวนเงิน...",
+
+    // global
+    "close.button": "ปิด",
+    "save.button": "บันทึก",
+    "withdraw.button": "ถอน",
+    "confirm.button": "ยืนยัน",
   },
 }
 
