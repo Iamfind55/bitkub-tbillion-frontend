@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import FAQ from "./FAQ";
 import Footer from "./Footer";
@@ -5,19 +7,14 @@ import Ouruser from "./ouruser";
 import Listtrade from "./trade/[name]/listtrade";
 import TimeCountdownPromotion from "./TimeCountdownPromotion";
 import Bannerslide from "./trade/bannerslide";
+import { useTranslation } from "@/lib/i18n";
 
-type typetrade = {
-  assetCode: string;
-  assetName: string;
-  logoUrl: string;
-  chartLine: string;
-  symbol: string;
-  circulatingSupply: string;
-};
-export default async function page() {
+export default function Page() {
+  const { t } = useTranslation();
+
   const cardFeatures = [
     {
-      name: "กำไรการค้าสูงถึง",
+      name: t("hero.profit"),
       icon: (
         <img
           src="/images/turn-back.png"
@@ -28,7 +25,7 @@ export default async function page() {
       value: "90%",
     },
     {
-      name: "รับค่าคอมมิชชั่น",
+      name: t("hero.comission"),
       icon: (
         <img
           src="/images/promotion.png"
@@ -39,7 +36,7 @@ export default async function page() {
       value: "50%",
     },
     {
-      name: "ฝาก และ ถอน",
+      name: t("hero.deposit_withdraw"),
       icon: (
         <img
           src="/images/cryptobank.png"
@@ -50,7 +47,7 @@ export default async function page() {
       value: "$100",
     },
     {
-      name: "ปริมาณการซื้อขายทั้งหมด",
+      name: t("hero.transactions"),
       icon: (
         <img
           src="/images/money-bag.png"
@@ -68,7 +65,7 @@ export default async function page() {
         className="min-h-screen w-full bg-cover md:pb-10 pb-5 bg-center "
         style={{
           backgroundImage:
-            'linear-gradient(#68686841, #222225f8), url("https://images.pexels.com/photos/8919573/pexels-photo-8919573.jpeg")',
+            'linear-gradient(#68686841,rgba(0, 0, 0, 0.97)), url("https://images.pexels.com/photos/8919573/pexels-photo-8919573.jpeg")',
           backgroundSize: "cover",
         }}
       >
@@ -105,14 +102,14 @@ export default async function page() {
                 <Ouruser />
               </h3>
               <h1 className="md:pt-5 pt-1 md:text-5xl text-2xl font-bold text-white">
-                ผู้ใช้ทั้งหมดของเรา
+                {t("hero.total_customer")}
               </h1>
               <div className="mt-5 md:mt-8">
                 <Link
                   href="/trade/BTCUSDT"
                   className="hover:text-white/80 px-6 py-1 md:py-2 bg-warning  rounded-md transition-all duration-200 font-bold text-lg"
                 >
-                  เทรดเลย
+                  {t("hero.trade_now")}
                 </Link>
               </div>
             </div>
@@ -162,3 +159,4 @@ export default async function page() {
     </div>
   );
 }
+

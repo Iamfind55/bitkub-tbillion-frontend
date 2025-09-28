@@ -1,8 +1,12 @@
 "use client";
 import Iconadd from "@/icon/iconadd";
 import Icondown from "@/icon/icondown";
+import { useTranslation } from "@/lib/i18n";
+import { ChevronRight } from "lucide-react";
 import { useState } from "react";
 function FAQ() {
+  const { t } = useTranslation();
+
   function AccordionItem({
     title,
     children,
@@ -11,6 +15,7 @@ function FAQ() {
     children: any;
   }) {
     const [isOpen, setIsOpen] = useState(false);
+
     return (
       <div>
         <h2 id={`accordion-heading-${title}`}>
@@ -24,7 +29,7 @@ function FAQ() {
           >
             <span>{title}</span>
             <div className="bg-white rounded-full text-primary shadow-lg ml-2">
-              {isOpen ? <Icondown /> : <Iconadd />}
+              {isOpen ? <Icondown /> : <ChevronRight size={20} />}
             </div>
           </button>
         </h2>
@@ -41,75 +46,64 @@ function FAQ() {
   }
   return (
     <div className="rounded-md container mx-auto py-5">
-      <h1 className="text-xl md:text-3xl text-center">คำถามที่พบบ่อย:</h1>
+      <h1 className="text-xl md:text-3xl text-center">{t("faq.title")}:</h1>
       <div className="px-5">
         <div>
-          <AccordionItem title="ฉันจะสร้างบัญชีในแพลตฟอร์มการซื้อขายของคุณได้อย่างไร?">
+          <AccordionItem title={t("faq.q1")}>
             <p className="text-gray-300">
-              คลิกที่ปุ่มลงทะเบียนด้านบนขวาและกรอกข้อมูลของคุณให้ครบถ้วนตามแบบฟอร์มในหน้าลงทะเบียน
-              เช่น: ชื่อและนามสกุล, อีเมล, รหัสผ่าน
-              จากนั้นคลิกลงทะเบียนก็สามารถเข้าสู่ระบบได้
-              แต่ก่อนที่คุณจะสามารถซื้อขายได้ คุณต้องยืนยันตัวตนของคุณเสียก่อน
-              หลังจากนั้นรอประมาณ 1 ชั่วโมงเพื่อยืนยันตัวตนของคุณ
-              หากบัญชีของคุณไม่ได้รับการอนุมัติ
-              คุณสามารถติดต่อผู้ดูแลระบบของเราเพื่อปลดล็อคเพื่อให้สามารถซื้อขายได้.
+              {t("faq.answer1")}
             </p>
           </AccordionItem>
-          <AccordionItem title="สกุลเงินดิจิทัลหรือสินทรัพย์ใดที่ฉันสามารถซื้อขายได้บนแพลตฟอร์มของคุณ?">
+          <AccordionItem title={t("faq.q2")}>
             <div className="text-gray-300">
               <div>
-                2.คุณสามารถซื้อขายสกุลเงินดิจิทัลได้หลากหลายสกุลเงินบนแพลตฟอร์มของเราเช่น:
+                {t("faq.answer2")}
               </div>
               <ul>
-                <li>สกุลเงิน BTCUSDT</li>
-                <li>สกุลเงิน BNBUSDT</li>
-                <li>สกุลเงิน ETHUSDT</li>
-                <li>สกุลเงิน XRPUSDT</li>
-                <li>สกุลเงิน USTCUSDT</li>
-                <li>สกุลเงินพอร์ทัล USDT</li>
-                <li>สกุลเงิน AVAXUSDT</li>
-                <li>สกุลเงิน AIUSDT</li>
-                <li>สกุลเงิน MATICUSDT</li>
-                <li>สกุลเงิน PEOPLEUSDT</li>
-                <li>สกุลเงิน WLDUSDT</li>
-                <li>สกุลเงิน BONKUSDT</li>
-                <li>สกุลเงิน ADAUSDT</li>
-                <li>สกุลเงิน FETUSDT</li>
-                <li>สกุลเงิน SHIBUSDT</li>
-                <li>สกุลเงิน SOLUSDT</li>
-                <li>สกุลเงิน DOGEUSDT</li>
-                <li>สกุลเงิน DOTUSDT</li>
-                <li>สกุลเงิน AGLDUSDT</li>
-                <li>สกุลเงิน PSGUSDG</li>
+                <li>{t("faq.currency")} BTCUSDT</li>
+                <li>{t("faq.currency")} BNBUSDT</li>
+                <li>{t("faq.currency")} ETHUSDT</li>
+                <li>{t("faq.currency")} XRPUSDT</li>
+                <li>{t("faq.currency")} USTCUSDT</li>
+                <li>{t("faq.currency")}พอร์ทัล USDT</li>
+                <li>{t("faq.currency")} AVAXUSDT</li>
+                <li>{t("faq.currency")} AIUSDT</li>
+                <li>{t("faq.currency")} MATICUSDT</li>
+                <li>{t("faq.currency")} PEOPLEUSDT</li>
+                <li>{t("faq.currency")} WLDUSDT</li>
+                <li>{t("faq.currency")} BONKUSDT</li>
+                <li>{t("faq.currency")} ADAUSDT</li>
+                <li>{t("faq.currency")} FETUSDT</li>
+                <li>{t("faq.currency")} SHIBUSDT</li>
+                <li>{t("faq.currency")} SOLUSDT</li>
+                <li>{t("faq.currency")} DOGEUSDT</li>
+                <li>{t("faq.currency")} DOTUSDT</li>
+                <li>{t("faq.currency")} AGLDUSDT</li>
+                <li>{t("faq.currency")} PSGUSDG</li>
               </ul>
             </div>
           </AccordionItem>
-          <AccordionItem title="ค่าธรรมเนียมที่เกี่ยวข้องกับการซื้อขายบนแพลตฟอร์มของคุณคืออะไร?">
+          <AccordionItem title={t("faq.q3")}>
             <div className="text-gray-300">
               <div>
-                ค่าธรรมเนียมหรือผลตอบแทนที่คุณจะได้รับจะขึ้นอยู่กับระยะเวลาและแต่ละช่วงจะได้รับผลกำไรที่แตกต่างกัน
-                เช่น:
+                {t("faq.answer3")}
               </div>
               <ul>
-                <li>30 วิเอากำไล10% ขั้นต่ำในการเทรดต้องมี 50 เหรียญ.</li>
-                <li>60 วิกำไล15% ในการเทรดต้องมี 5000 เหรียญ.</li>
-                <li>90 วิกำไล20% ในการเทรดต้องมี 15000 เหรียญ.</li>
+                <li>{t("faq.answer3-1")}</li>
+                <li>{t("faq.answer3-2")}</li>
+                <li>{t("faq.answer3-3")}</li>
               </ul>
             </div>
           </AccordionItem>
-          <AccordionItem title="บัญชีและข้อมูลส่วนบุคคลของฉันความปลอดภัยอย่างไร?">
+          <AccordionItem title={t("faq.q4")}>
             <p className="text-gray-300">
-              ข้อมูลทั้งหมดที่ป้อนบนแพลตฟอร์มของเราได้รับการเข้ารหัสเมื่อไม่ได้ใช้งานและอยู่ระหว่างการส่งผ่านโดยใช้โปรโตคอลมาตรฐานอุตสาหกรรม
-              ซึ่งหมายความว่าถึงแม้จะมีคนดักข้อมูล
-              พวกเขาก็จะไม่สามารถอ่านข้อมูลได้.
+              {t("faq.answer4")}
             </p>
           </AccordionItem>
 
-          <AccordionItem title="คุณมีบริการสนับสนุนลูกค้าหรือไม่ และฉันจะติดต่อขอความช่วยเหลือได้อย่างไร?">
+          <AccordionItem title={t("faq.q5")}>
             <p className="text-gray-300">
-              เรามีบริการลูกค้าตลอด 24 ชั่วโมง
-              ซึ่งหมายความว่าคุณสามารถติดต่อผู้ดูแลระบบของเราได้ตลอดเวลาที่คุณต้องการหรือมีปัญหาในการซื้อขายหรือการฝาก-ถอนเงิน
-              และคุณสามารถติดต่อเราผ่านช่องทางด้านล่าง: ไลน์แอด: @823saamn
+              {t("faq.answer5")}
             </p>
           </AccordionItem>
         </div>

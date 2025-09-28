@@ -4,6 +4,7 @@ import "./globals.scss";
 import "react-toastify/dist/ReactToastify.css";
 import { ReduxProvider } from "@/redux/provider";
 import { ToastContainer } from "react-toastify";
+import { TranslationProvider } from "@/lib/i18n";
 
 const inter = Inter({ subsets: ["latin"] });
 const Noto_Sans = Noto_Sans_Thai({
@@ -37,7 +38,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={`bg-dark ${Noto_Sans.className}`}>
         <div className="text-white h-screen">
-          <ReduxProvider>{children}</ReduxProvider>
+          <ReduxProvider>
+            <TranslationProvider>
+              {children}
+            </TranslationProvider>
+          </ReduxProvider>
         </div>
         <ToastContainer
           position="top-right"

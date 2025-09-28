@@ -14,8 +14,11 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Mywallet from "./mywallet";
 import Iconuser from "@/icon/iconuser";
+import { LanguageSwitcher } from "../language-switcher";
+import { useTranslation } from "@/lib/i18n";
 
 export default function Navbar() {
+  const { t } = useTranslation()
   const router = useRouter();
   const modalRef = useRef<HTMLDivElement>(null);
   const [isprofile, setIsprofile] = useState(false);
@@ -223,17 +226,18 @@ export default function Navbar() {
                 </>
               ) : (
                 <>
+                  <LanguageSwitcher />
                   <Link
                     href="/login"
-                    className="hover:text-white/80 px-3 py-1 bg-yellow-500  rounded-md transition-all duration-200 font-bold text-lg"
+                    className="text-sm hover:text-white/80 px-3 py-1 bg-yellow-500 transition-all duration-200 font-bold rounded-md"
                   >
-                    เข้าสู่ระบบ
+                    {t("navbar.login")}
                   </Link>
                   <Link
                     href="/register"
-                    className="hover:text-white/80 px-3 py-1 rounded-md border border-gray-200 transition-all duration-200 font-bold text-lg"
+                    className="text-sm hover:text-white/80 px-3 py-1 border border-gray-200 transition-all duration-200 font-bold rounded-md"
                   >
-                    ลงชื่อเข้าใช้
+                    {t("navbar.register")}
                   </Link>
                 </>
               )}
@@ -366,13 +370,13 @@ export default function Navbar() {
                 href="/login"
                 className="hover:text-white/80 px-3 py-1 bg-yellow-500  rounded-md transition-all duration-200 font-bold text-lg"
               >
-                เข้าสู่ระบบ
+                {t("navbar.login")}
               </Link>
               <Link
                 href="/register"
                 className="hover:text-white/80 px-3 py-1 rounded-md border border-gray-200 transition-all duration-200 font-bold text-lg"
               >
-                ลงชื่อเข้าใช้
+                {t("navbar.register")}
               </Link>
             </>
           )}
