@@ -1,0 +1,20 @@
+export enum LinkApi {
+  users = "/users",
+  login = "/auth/login",
+  signin = "/auth/signin",
+  types = "/wallet-types",
+  coupons = "/coupons",
+  duration = "/durations",
+  withdraw = "/withdraws",
+  withdrawApprove = "/transactions/approve",
+  deposit = "/deposits",
+  transaction = "/transactions",
+  trade = "/trades",
+  tradePending = "trades/trading",
+  manageTrade = "/trades/approve",
+  changePassword = "/users/change-password",
+  changeCustomerPassword = "/users/change-customer-password",
+  profile="/profile",
+  coin = "/coins",
+  qrcode="/qr-code"
+}

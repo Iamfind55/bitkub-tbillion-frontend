@@ -1,0 +1,9 @@
+export const durationUnit = [
+  { value: "second", label: "second" },
+  { value: "minute", label: "minute" },
+  { value: "hour", label: "hour" },
+  { value: "day", label: "day" },
+  { value: "week", label: "week" },
+  { value: "month", label: "month" },
+  { value: "year", label: "year" },
+];

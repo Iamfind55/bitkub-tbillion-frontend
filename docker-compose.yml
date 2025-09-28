@@ -1,0 +1,9 @@
+version: '3'
+services:  
+  react-app:
+    build:
+      context: .
+      dockerfile: Dockerfile # Path to your React Dockerfile
+    ports:
+      - "3300:3000" # Should match the port in your React Dockerfile
+    restart: always

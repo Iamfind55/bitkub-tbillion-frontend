@@ -1,0 +1,186 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* style buttom btn */
+.btn-primary {
+  @apply bg-primary px-5 py-2 cursor-pointer active:ring-primary/50 active:ring-2 select-none hover:bg-primary/95 rounded text-white transition-all duration-300 font-medium;
+}
+.btn-warning {
+  @apply bg-warning px-5 py-2 cursor-pointer active:ring-warning/50 active:ring-2 select-none hover:bg-warning/95 rounded text-white transition-all duration-300 font-medium;
+}
+.btn-success {
+  @apply bg-success px-5 py-2 cursor-pointer active:ring-success/50 active:ring-2 select-none hover:bg-success/95 rounded text-white transition-all duration-300 font-medium;
+}
+.btn-danger {
+  @apply bg-danger px-5 py-2 cursor-pointer active:ring-danger/50 active:ring-2 select-none hover:bg-danger/95 rounded text-white transition-all duration-300 font-medium;
+}
+.btn-info {
+  @apply bg-info px-5 py-2 cursor-pointer active:ring-info/50 active:ring-2 select-none hover:bg-info/95 rounded text-white transition-all duration-300 font-medium;
+}
+
+/* style text input */
+
+.form-control {
+  @apply rounded w-full border shadow border-primary/80 focus:border-primary focus:bg-white focus:ring-1 focus:ring-primary/90 text-base outline-none text-info py-2 px-3  transition-colors duration-200 ease-in-out;
+}
+
+.badge-primary {
+  @apply px-4 py-1 rounded-lg text-center select-none opacity-90 w-[150px] text-[12px]  bg-primary text-white;
+}
+.badge-success {
+  @apply px-4 py-1 rounded-lg text-center select-none opacity-90 w-[150px] text-[12px] bg-success text-white;
+}
+.badge-warning {
+  @apply px-4 py-1 rounded-lg text-center select-none opacity-90 w-[150px] text-[12px] bg-warning text-white;
+}
+.badge-default {
+  @apply px-4 py-1 rounded-lg text-center select-none opacity-90 w-[150px] text-[12px] text-gray-800 bg-yellow-700;
+}
+.badge-danger {
+  @apply px-4 py-1 rounded-lg text-center select-none opacity-90 w-[150px] text-[12px] bg-danger text-white;
+}
+.badge-info {
+  @apply px-4 py-1 rounded-lg text-center select-none opacity-90 w-[150px] text-[12px] bg-info text-white;
+}
+
+.swal2-confirm {
+  background-color: #05b063 !important;
+}
+.swal2-cancel {
+  background-color: #c30e07 !important;
+}
+
+.table {
+  width: 100%;
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  /* Style table headers */
+  th {
+    background-color: #f2f2f2;
+  }
+
+  /* Style table rows */
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  /* Style table cells */
+  td,
+  th {
+    border: 1px solid #dddddd;
+    padding: 8px;
+  }
+}
+
+.tableInfo {
+  width: 100%;
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  /* Style table headers */
+  th {
+    @apply bg-info/90;
+  }
+
+  /* Style table rows */
+  tr:nth-child(even) {
+    @apply bg-info/90;
+  }
+
+  /* Style table cells */
+  td,
+  th {
+    // border: 1px solid #dddddd;
+    @apply border border-warning/30;
+    padding: 12px 8px;
+  }
+}
+
+// style for pagination
+.pagination {
+  @apply flex justify-center items-center;
+
+  .page {
+    @apply py-1 mx-1 rounded-lg text-center select-none bg-warning text-gray-800;
+    a {
+      @apply px-2 py-1 mx-1 rounded-lg text-center select-none bg-warning text-gray-800;
+    }
+  }
+  .page.active {
+    @apply py-1 mx-1 rounded-lg text-center select-none bg-gray-800 text-white;
+    a {
+      @apply px-2 py-1 mx-1 rounded-lg text-center select-none bg-gray-800 text-white;
+    }
+  }
+  .page.disabled {
+    @apply py-1 mx-1 rounded-lg text-center select-none bg-gray-200 text-gray-800;
+    a {
+      @apply px-2 py-1 mx-1 rounded-lg text-center select-none bg-gray-200 text-gray-800;
+    }
+  }
+  .previous {
+    @apply py-1 mx-1 rounded-lg text-center select-none bg-warning text-gray-800;
+    a {
+      @apply px-2 py-1 mx-1 rounded-lg text-center select-none bg-warning text-gray-800;
+    }
+  }
+  .previous.disabled {
+    @apply py-1 mx-1 rounded-lg text-center select-none bg-gray-200 text-gray-800;
+    a {
+      @apply px-2 py-1 mx-1 rounded-lg text-center select-none bg-gray-200 text-gray-800;
+    }
+  }
+  .next {
+    @apply py-1 mx-1 rounded-lg text-center select-none bg-warning text-gray-800;
+    a {
+      @apply px-2 py-1 mx-1 rounded-lg text-center select-none bg-warning text-gray-800;
+    }
+  }
+  .next.disabled {
+    @apply py-1 mx-1 rounded-lg text-center select-none bg-gray-200 text-gray-800;
+    a {
+      @apply px-2 py-1 mx-1 rounded-lg text-center select-none bg-gray-200 text-gray-800;
+    }
+  }
+}
+
+
+// https://fonts.google.com/noto/specimen/Noto+Sans+Thai?query=noto+sans+th 
+
+
+.custom-height {
+  height: 300px; /* Adjust the value as needed */
+}
+
+@media only screen and (max-width: 600px) {
+  .banner-slide{
+    height:200px; /* Adjust the value as needed */
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .banner-slide{
+    height: calc(100vh - 60px); /* Adjust the value as needed */
+  }
+}
+
+.swiper-button-prev, .swiper-button-next{
+  color:#16203b!important;
+}
+
+.swiper-button-prev:after, .swiper-button-next:after{
+  font-size: 30px!important;
+  font-weight: bold; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
