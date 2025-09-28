@@ -11,7 +11,9 @@ import { toast } from "react-toastify";
 import Loader from "@/utils/Loader";
 import ErrorPage from "@/utils/ErrorPage";
 import { useSelector } from "react-redux";
+import { useTranslation } from "@/lib/i18n";
 function MainPrivacy() {
+  const { t } = useTranslation()
   const api = useApi();
   const [myinfo, setMyinfo] = useState<any | null>(null);
   const [verification, setVerification] = useState<any | null>(null);
@@ -120,10 +122,10 @@ function MainPrivacy() {
           formdata.append("images", file?.data[0]);
           url = myinfo?.profile[0]?.filename
             ? process.env.NEXT_PUBLIC_API_URL +
-              "/" +
-              "profile" +
-              "/" +
-              myinfo?.profile[0]?.profileId
+            "/" +
+            "profile" +
+            "/" +
+            myinfo?.profile[0]?.profileId
             : process.env.NEXT_PUBLIC_API_URL + "/" + "profile";
           method = myinfo?.profile[0]?.filename ? "PUT" : "POST";
         } else {
@@ -131,10 +133,10 @@ function MainPrivacy() {
             formdata.append("images", file?.data[1] || file?.data[0]);
             url = myinfo?.profile[1]?.filename
               ? process.env.NEXT_PUBLIC_API_URL +
-                "/" +
-                "profile" +
-                "/" +
-                myinfo?.profile[1]?.profileId
+              "/" +
+              "profile" +
+              "/" +
+              myinfo?.profile[1]?.profileId
               : process.env.NEXT_PUBLIC_API_URL + "/" + "profile";
             method = myinfo?.profile[1]?.filename ? "PUT" : "POST";
           }
@@ -164,7 +166,7 @@ function MainPrivacy() {
       }, 1000);
     }
     if (result.status == 200) {
-      toast.success("อัปเดตความสำร็จ", {
+      toast.success(t("alert.upload200"), {
         position: "top-right",
         autoClose: 3000,
         hideProgressBar: false,
@@ -183,21 +185,20 @@ function MainPrivacy() {
       <div className="mt-5 px-10 py-5  md:flex justify-around sm:block">
         <div>
           <p className="text-gray-400 text-xl underline mb-5">
-            กระบวนการที่ผ่านการตรวจสอบ
+            {t("hero.verification_title")}
           </p>
           <ol className="relative text-gray-500 border-s border-gray-200 dark:border-gray-700 dark:text-gray-400">
             <li className="mb-10 ms-8">
               <span className="absolute flex items-center justify-center w-8 h-8 bg-green-200 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-green-900">
                 <FaCheck className="text-green-500" />
               </span>
-              <h3 className="font-medium leading-tight">ข้อมูลส่วนตัว</h3>
-              <p className="text-sm">ชื่อ อีเมล เพศ ที่อยู่ และอื่นๆ</p>
+              <h3 className="font-medium leading-tight">{t("hero.info")}</h3>
+              <p className="text-sm">{t("hero.address")}</p>
             </li>
             <li className="mb-10 ms-8">
               <span
-                className={`absolute flex items-center justify-center w-8 h-8 ${
-                  myinfo?.profile?.length > 0 ? "bg-green-200" : "bg-gray-100"
-                } rounded-full -start-4 ring-4 ring-white`}
+                className={`absolute flex items-center justify-center w-8 h-8 ${myinfo?.profile?.length > 0 ? "bg-green-200" : "bg-gray-100"
+                  } rounded-full -start-4 ring-4 ring-white`}
               >
                 {myinfo?.profile?.length > 0 ? (
                   <FaCheck className="text-green-500" />
@@ -205,14 +206,13 @@ function MainPrivacy() {
                   <FaAddressCard />
                 )}
               </span>
-              <h3 className="font-medium leading-tight">ข้อมูลบัญชี</h3>
-              <p className="text-sm">หนังสือเดินทาง,บัตรประจำตัวประชาชน</p>
+              <h3 className="font-medium leading-tight">{t("here.account")}</h3>
+              <p className="text-sm">{t("hero.passs")}</p>
             </li>
             <li className="mb-10 ms-8">
               <span
-                className={`absolute flex mt-2 items-center justify-center w-8 h-8 ${
-                  myinfo?.status === "active" ? "bg-green-200" : "bg-gray-200"
-                } rounded-full -start-4 ring-4 ring-white`}
+                className={`absolute flex mt-2 items-center justify-center w-8 h-8 ${myinfo?.status === "active" ? "bg-green-200" : "bg-gray-200"
+                  } rounded-full -start-4 ring-4 ring-white`}
               >
                 {myinfo?.status === "active" ? (
                   <FaCheck className="text-green-500" />
@@ -220,14 +220,13 @@ function MainPrivacy() {
                   <VscPreview className="text-gray-700" />
                 )}
               </span>
-              <h3 className="font-medium leading-tight">ตรวจสอบ</h3>
-              <p className="text-sm">ประวัติข้อมูลทั้งหมด</p>
+              <h3 className="font-medium leading-tight">{t("hero.check")}</h3>
+              <p className="text-sm">{t("hero.history")}</p>
             </li>
             <li className="ms-8">
               <span
-                className={`absolute flex mt-2 items-center justify-center w-8 h-8 ${
-                  myinfo?.status === "active" ? "bg-green-200" : "bg-gray-200"
-                } rounded-full -start-4 ring-4 ring-white`}
+                className={`absolute flex mt-2 items-center justify-center w-8 h-8 ${myinfo?.status === "active" ? "bg-green-200" : "bg-gray-200"
+                  } rounded-full -start-4 ring-4 ring-white`}
               >
                 {myinfo?.status === "active" ? (
                   <FaCheck className="text-green-500" />
@@ -236,30 +235,25 @@ function MainPrivacy() {
                 )}
               </span>
 
-              <h3 className="font-medium leading-tight">ได้รับการอนุมัติ</h3>
-              <p className="text-sm">ยืนยันตัวตนเสร็จสมบูรณ์</p>
+              <h3 className="font-medium leading-tight">{t("hero.verify")}</h3>
+              <p className="text-sm">{t("hero.complete")}</p>
             </li>
           </ol>
         </div>
 
         <div className="md:w-1/2 sm:w-full md:mt-0 mt-10">
-          <p className="text-red-400 text-xl">
-            การยืนยันตัวตนของผู้ใช้งานจะใช่เวลา 1 - 3 วันทำการ
-          </p>
-          <p className="text-gray-400">
-            วิธียืนยันตัวตน (โปรดอ่าน) ถ่ายรูปบัตรประชาชน หรือ ใบขับขี่
-            โดยเห็นชื่อให้ชัด ถ้าไม่ชัดทางเราจะให้คุณยืนยันตัวตนใหม่
-          </p>
+          <p className="text-red-400 text-xl">{t("hero.checkDay")}</p>
+          <p className="text-gray-400">{t("hero.step")}</p>
           <div className="md:mt-10 mt-5">
             <div className="mb-3">
               <label className="block text-md font-medium text-gray-400">
-                ชื่อผู้ใช้
+                {t("hero.user")}
               </label>
               <input
                 type="text"
                 id="text"
                 className="shadow-sm bg-gray-300 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                placeholder="ชื่อผู้ใช้"
+                placeholder={t("hero.user")}
                 value={myinfo?.name}
                 onChange={(e) => {
                   setMyinfo({ ...myinfo, name: e?.target?.value });
@@ -268,13 +262,13 @@ function MainPrivacy() {
             </div>
             <div className="mb-3">
               <label className="block text-md font-medium text-gray-400">
-                อีเมลของคุณ
+                {t("label.email")}
               </label>
               <input
                 type="email"
                 id="email"
                 className="shadow-sm bg-gray-300 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                placeholder="อีเมลของคุณ"
+                placeholder={t("label.email")}
                 value={myinfo?.email}
                 onChange={(e) => {
                   setMyinfo({ ...myinfo, name: e?.target?.value });
@@ -283,12 +277,12 @@ function MainPrivacy() {
             </div>
             <div className="mb-5">
               <label className="block text-md font-medium text-gray-400">
-                โทรศัพท์
+                {t("label.phone")}
               </label>
               <input
                 type="number"
                 className="shadow-smg bg-gray-300 border border-gray-400 text-gray-900 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
-                placeholder="โทรศัพท์..."
+                placeholder={t("label.phone")}
                 value={myinfo?.phone}
                 onChange={(e) => {
                   setMyinfo({ ...myinfo, phone: e?.target?.value });
@@ -300,7 +294,7 @@ function MainPrivacy() {
               <div className="md:flex sm:block">
                 <div className="w-full">
                   <p className="text-md font-medium text-gray-400 mb-5">
-                    แนบรูปภาพหน้าบัตรประชาชน
+                    {t("hero.front")}
                   </p>
                   {loading ? (
                     <Loader />
@@ -321,7 +315,7 @@ function MainPrivacy() {
                       ) : (
                         <div className="flex flex-col items-center justify-center py-10 bg-white rounded-lg">
                           <h2 className="text-gray-900 px-2">
-                            อัปโหลดรูปภาพหน้าหนังสือเดินทางหรือบัตรประจำตัวประชาชน
+                            {t("hero.imageVerify")}
                           </h2>
                         </div>
                       )}
@@ -333,14 +327,14 @@ function MainPrivacy() {
                       />
                       <div className="flex gap-5 py-2 mt-0">
                         <FaCloudUploadAlt size={22} />
-                        <p>เลือกภาพ</p>
+                        <p>{t("hero.image")}</p>
                       </div>
                     </label>
                   )}
                 </div>
                 <div className="w-full mt-3 md:mt-0">
                   <p className="text-md font-medium text-gray-400 mb-5">
-                    แนบรูปภาพหลังบัตรประชาชน
+                    {t("hero.back")}
                   </p>
                   {loading ? (
                     <Loader />
@@ -361,7 +355,7 @@ function MainPrivacy() {
                       ) : (
                         <div className="flex flex-col items-center justify-center py-10 bg-white rounded-lg">
                           <h2 className="text-gray-900 px-2">
-                            อัปโหลดรูปภาพหลังหนังสือเดินทางหรือบัตรประจำตัวประชาชน
+                             {t("hero.imageVerify")}
                           </h2>
                         </div>
                       )}
@@ -373,7 +367,7 @@ function MainPrivacy() {
                       />
                       <div className="flex gap-5 py-2 mt-0">
                         <FaCloudUploadAlt size={22} />
-                        <p>เลือกภาพ</p>
+                        <p>{t("hero.image")}</p>
                       </div>
                     </label>
                   )}
@@ -390,7 +384,7 @@ function MainPrivacy() {
             className="text-white bg-yellow-500 hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-md px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             onClick={handleSubmit}
           >
-            อัปโหลดตอนนี้
+            {t("button.uplpoadNow")}
           </button>
         </div>
       </div>

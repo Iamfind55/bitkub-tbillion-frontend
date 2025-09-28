@@ -78,6 +78,89 @@ const translations = {
     "account.account": "My Account",
     "account.privacy": "Identity Verification",
 
+    //login
+    "login.title": "Login",
+    "login.email": "Phone/Email",
+    "login.password": "Password",
+    "login.forgot": "Forgot password",
+    "login.signup": "Register",
+    "register.title": "Create an account",
+    "register.exist": "Already register",
+
+    "alert.login200": "Login success",
+    "alert.upload200": "Upload success",
+    "alert.signup200": "Register success",
+    "alert.message500": "Interal server error",
+    "alert.resetPassword": "Reset password successfull",
+    "alert.notFoundEmail": "User or email not found",
+    "alert.upldateProfile200": "เปลี่ยนโปรไฟล์สำเร็จ",
+
+
+
+
+    "trade.timerequired": "Please select time",
+    "trade.timeUpDown": "Plase select up or down!",
+    "trade.amount": "Please enter amount",
+    "trade.enougthAmount": "Yout balance not enougth",
+    "trade.minAmount": "Your amount min",
+
+    "label.name": "Name",
+    "label.phone": "Phone",
+    "label.password": "Password",
+    "label.email": "Email",
+    "label.address": "Address",
+
+    "label.second": "Second",
+    "label.minute": "Minute",
+    "label.hour": "Hours",
+    "label.day": "day",
+    "label.week": "Week",
+    "label.db": "Birdth day",
+    "label.status": "Status",
+
+    "label.reset": "Reset",
+    "button.down": "Down",
+    "button.up": "Up",
+    "button.sumbit": "Submit",
+    "button.uplpoadNow": "Upload now",
+
+    // verification
+    "hero.verification": "Verification",
+
+    "hero.verification_title": "Audited process",
+    "hero.info": "Personal infomation",
+    "hero.address": "Name, email, gender, address, etc.",
+    "here.account": "Account information",
+    "here.passs": "Passport, ID card",
+    "hero.check": "Examine",
+    "hero.history": "All historical data",
+    "hero.verify": "Approved",
+    "hero.complete": "Identity verification complete",
+    "hero.checkDay": "User identity verification takes 1-3 business days.",
+    "hero.step": "How to verify your identity (please read): Take a photo of your ID card or driver's license with your name clearly visible. If it is not clear, we will ask you to verify your identity again.",
+    "hero.user": "Username",
+    "hero.front": "Attach a photo of the front of your ID card.",
+    "hero.imageVerify": "Upload a photo of your passport or ID card.",
+    "hero.image": "Select image",
+    "hero.back": "Attach a photo of the back of your ID card.",
+
+    // my account
+    "hero.male": "Male",
+    "hero.female": "Female",
+    "hero.other": "Other",
+
+    "hero.transationTitle": "Transaction",
+    "hero.amount": "Amount",
+    "hero.notData": "No data",
+
+    "hero.trandTitle": "Trade List",
+    "hero.trade200": "Transfer success",
+    "hero.move200": "Transfer",
+    "hero.all": "All",
+    "hero.pecent": "Percent",
+    "hero.type": "Type",
+    "hero.trade": "Trade",
+
     // Bank account
     "bank.manage": "Manage Banks",
     "bank.create": "Add New Bank",
@@ -265,6 +348,89 @@ const translations = {
     "save.button": "บันทึก",
     "withdraw.button": "ถอน",
     "confirm.button": "ยืนยัน",
+
+    // auth
+    "login.title": "เข้าสู่ระบบ",
+    "login.email": "โทรศัพท์/อีเมล",
+    "login.password": "รหัสผ่าน",
+    "login.forgot": "ลืมรหัสผ่าน",
+    "login.signup": "ลงทะเบียนเลย",
+    "register.title": "ลงชื่อเข้าใช้บัญชีของคุณ",
+
+
+    "alert.login200": "เข้าสู่ระบบสำเร็จ",
+    "alert.upload200": "อัปเดตความสำร็จ",
+    "alert.upldateProfile200": "เปลี่ยนโปรไฟล์สำเร็จ",
+
+    "register.signup200": "ลงทะเบียนสำเร็จ",
+    "alert.exist": "อีเมล์ที่ลงทะเบียนไว้แล้ว",
+    "alert.message500": "ข้อผิดพลาดเซิร์ฟเวอร์ภายใน",
+    "alert.resetPassword": "รีเซ็ตรหัสผ่านสำเร็จ ตรวจสอบรหัสผ่านใหม่ที่ส่งไปยังอีเมล",
+    "alert.notFoundEmail": "รีเซ็ตรหัสผ่านสำเร็จ ตรวจสอบรหัสผ่านใหม่ที่ส่งไปยังอีเมล",
+
+
+    "trade.timerequired": "โปรดเลือกระยะเวลา",
+    "trade.timeUpDown": "กรุณาเลือก ขึ้น หรือ ลง!",
+    "trade.amount": "กรุณาระบุจำนวนเงิน",
+    "trade.enougthAmount": "ยอดเงินไม่เพียงพอ",
+    "trade.minAmount": "จำนวนเงินขั้นต่ำ",
+
+    "label.name": "ชื่อ",
+    "label.phone": "หมายเลขโทรศัพท์",
+    "label.password": "รหัสผ่าน",
+    "label.email": "อีเมล",
+    "label.address": "ที่อยู่",
+    "label.second": "วินาที",
+    "label.minute": "นาที",
+    "label.hour": "ชั่วโมง",
+    "label.day": "วัน",
+    "label.week": "อาทิตย์",
+    "label.db": "วันเกิด",
+    "label.status": "สถานะ",
+
+    "label.reset": "รีเซ็ต",
+    "button.down": "ลง",
+    "button.up": "ขึ้น",
+    "button.sumbit": "ส่ง",
+    "button.uplpoadNow": "อัปโหลดตอนนี้",
+
+    // verification
+    "hero.verification": "การยืนยันตัวตน",
+    "hero.verification_title": "กระบวนการที่ผ่านการตรวจสอบ",
+    "hero.info": "ข้อมูลส่วนตัว",
+    "hero.address": "ชื่อ อีเมล เพศ ที่อยู่ และอื่นๆ",
+    "here.account": "ข้อมูลบัญชี",
+    "here.passs": "หนังสือเดินทาง,บัตรประจำตัวประชาชน",
+    "hero.check": "ตรวจสอบ",
+    "hero.history": "ประวัติข้อมูลทั้งหมด",
+    "hero.verify": "ได้รับการอนุมัติ",
+    "hero.complete": "ยืนยันตัวตนเสร็จสมบูรณ์",
+    "hero.checkDay": "การยืนยันตัวตนของผู้ใช้งานจะใช่เวลา 1 - 3 วันทำการ",
+    "hero.step": "วิธียืนยันตัวตน (โปรดอ่าน) ถ่ายรูปบัตรประชาชน หรือ ใบขับขี่โดยเห็นชื่อให้ชัด ถ้าไม่ชัดทางเราจะให้คุณยืนยันตัวตนใหม่",
+    "hero.user": "ชื่อผู้ใช้",
+    "hero.front": "แนบรูปภาพหน้าบัตรประชาชน",
+    "hero.imageVerify": "อัปโหลดรูปภาพหน้าหนังสือเดินทางหรือบัตรประจำตัวประชาชน",
+    "hero.image": "เลือกภาพ",
+    "hero.back": "แนบรูปภาพหลังบัตรประชาชน",
+
+    // my account
+    "hero.male": "ชาย",
+    "hero.female": "หญิง",
+    "hero.other": "อื่นๆ",
+
+    // transaction
+    "hero.transationTitle": "การทำธุรกรรม",
+    "hero.amount": "จำนวน",
+    "hero.notData": "ไม่มีข้อมูล",
+    "hero.trandTitle": "รายการการค้า",
+    "hero.trade200": "โอนสำเร็จ",
+    "hero.move200": "โอนย้าย",
+    "hero.all": "ทั้งหมด",
+    "hero.pecent": "เปอร์เซ็นต์",
+    "hero.type": "หมวดหมู่",
+    "hero.trade": "ซื้อขาย",
+
+
   },
 }
 

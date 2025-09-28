@@ -1,5 +1,6 @@
 "use client";
 import { IRegister } from "@/interface/registertype";
+import { useTranslation } from "@/lib/i18n";
 import { ActionRegister } from "@/services/services";
 import Button from "@/utils/Button";
 import Textarea from "@/utils/Textarea";
@@ -9,6 +10,7 @@ import React, { useState } from "react";
 import { toast } from "react-toastify";
 
 export default function FormRegister() {
+  const { t } = useTranslation()
   const router = useRouter();
   const formentry = {
     name: "",
@@ -28,12 +30,12 @@ export default function FormRegister() {
     ActionRegister(formsigin).then((res: any) => {
       try {
         if (res.status === 200) {
-          toast.success("ลงทะเบียนสำเร็จ");
+          toast.success(t("alert.signup200"));
           setFormsigin(formentry);
           router.push("/login");
         } else {
           if (res.message === "Email already registered") {
-            toast.warning("อีเมล์ที่ลงทะเบียนไว้แล้ว", {
+            toast.warning("register.exist", {
               position: "top-right",
               autoClose: 5000,
               hideProgressBar: false,
@@ -48,7 +50,7 @@ export default function FormRegister() {
           }
         }
       } catch (error) {
-        toast.error("Internal server error");
+        toast.error(t("alert.message500"));
       }
     });
   };
@@ -60,7 +62,7 @@ export default function FormRegister() {
       >
         <div className="col-span-12 mb-5">
           <div className="text-3xl text-center font-medium">
-            ลงชื่อเข้าใช้บัญชีของคุณ
+            {t("register.title")}
           </div>
         </div>
         <div className="col-span-12">
@@ -68,8 +70,8 @@ export default function FormRegister() {
             name="name"
             value={formsigin.name}
             onChange={handleForm}
-            title="ชื่อ"
-            placeholder="กรอกขื่อ"
+            title={t("label.name")}
+            placeholder={t("label.name")}
             required
           />
         </div>
@@ -79,8 +81,8 @@ export default function FormRegister() {
             name="phone"
             value={formsigin.phone}
             onChange={handleForm}
-            title="หมายเลขโทรศัพท์"
-            placeholder="กรอกหมายเลขโทรศัพท์"
+            title={t("label.phone")}
+            placeholder={t("label.phone")}
             required
           />
         </div>
@@ -90,8 +92,8 @@ export default function FormRegister() {
             name="password"
             value={formsigin.password}
             onChange={handleForm}
-            title="รหัสผ่าน"
-            placeholder="กรอกรหัสผ่าน"
+            title={t("label.password")}
+            placeholder={t("label.password")}
             required
           />
         </div>
@@ -100,8 +102,8 @@ export default function FormRegister() {
             name="email"
             value={formsigin.email}
             onChange={handleForm}
-            title="อีเมล"
-            placeholder="กรอกอีเมล์ของคุณ"
+            title={t("label.email")}
+            placeholder={t("label.email")}
           />
         </div>
         <div className="col-span-12">
@@ -111,25 +113,25 @@ export default function FormRegister() {
             onChange={(e) => {
               handleForm(e as any);
             }}
-            title="ที่อยู่"
-            placeholder="กรอกรที่อยู่"
+            title={t("label.address")}
+            placeholder={t("label.address")}
           />
         </div>
         <div className="col-span-12 flex items-center gap-5">
           <Button
-            title="รีเซ็ต"
+            title={t("label.reset")}
             type="reset"
             className="rounded text-white mt-3 text-large border border-gray-200"
           />
           <Button
-            title="ลงทะเบียนเลย"
+            title={t("login.signup")}
             type="submit"
             className="bg-warning rounded mt-3 text-large text-white"
           />
         </div>
         <div className="col-span-12">
           <a href="/login" className="underline uppercase">
-            เข้าสู่ระบบ
+            {t("login.title")}
           </a>
         </div>
       </form>

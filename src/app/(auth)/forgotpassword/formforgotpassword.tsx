@@ -1,6 +1,7 @@
 "use client";
 import Iconreload from "@/icon/iconreload";
 import { IForgotpassword } from "@/interface/registertype";
+import { useTranslation } from "@/lib/i18n";
 import { ActionForgotpassword } from "@/services/services";
 import Button from "@/utils/Button";
 import Textfield from "@/utils/Textfield";
@@ -9,6 +10,7 @@ import React, { useState } from "react";
 import { toast } from "react-toastify";
 
 export default function FormForgotpassword() {
+  const {t}=useTranslation()
   const [isloading, setIsloading] = useState(false);
   const router = useRouter();
   const formenforgotpassword = {
@@ -28,9 +30,7 @@ export default function FormForgotpassword() {
       setIsloading(false);
       try {
         if (res.status === 200) {
-          toast.warning(
-            "รีเซ็ตรหัสผ่านสำเร็จ ตรวจสอบรหัสผ่านใหม่ที่ส่งไปยังอีเมล",
-            {
+          toast.warning(t("alert.resetPassword"),{
               position: "top-right",
               autoClose: 5000,
               hideProgressBar: false,
@@ -48,7 +48,7 @@ export default function FormForgotpassword() {
           }, 1000);
         } else {
           if (res.message == "Already exists") {
-            toast.warning("ไม่พบอีเมล!", {
+            toast.warning(t("alert.notFoundEmail"), {
               position: "top-right",
               autoClose: 5000,
               hideProgressBar: false,
@@ -63,7 +63,7 @@ export default function FormForgotpassword() {
           }
         }
       } catch (error) {
-        toast.warning("internal server error");
+        toast.warning(t("alert.message500"));
       }
     });
   };
@@ -81,14 +81,14 @@ export default function FormForgotpassword() {
             name="email"
             value={formforgotpass.email}
             onChange={handleForm}
-            title="อีเมล"
-            placeholder="กรอกอีเมล์ของคุณ"
+            title={t("label.email")}
+            placeholder={t("label.email")}
             required
           />
         </div>
         <div className="col-span-12 flex items-center gap-5">
           <Button
-            title={`ส่ง`}
+            title={t("button.sumbit")}
             type="submit"
             className="bg-warning rounded text-white"
           />
@@ -101,7 +101,7 @@ export default function FormForgotpassword() {
         }`}
       >
         <span>
-          กำลังส่ง...
+          {t("hero.sending")}
           <Iconreload />
         </span>
       </div>

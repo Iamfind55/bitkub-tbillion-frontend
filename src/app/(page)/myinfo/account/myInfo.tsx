@@ -1,8 +1,9 @@
 "use client";
 import { LinkApi } from "@/enum/linkapi";
 import { formatDateDash } from "@/helper/format";
+import { useTranslation } from "@/lib/i18n";
 import { setRefresh } from "@/redux/slice/dialogSlice";
-import useApi from "@/services/api"; 
+import useApi from "@/services/api";
 import Loader from "@/utils/Loader";
 import { useEffect, useState } from "react";
 import ReactDatePicker from "react-datepicker";
@@ -11,6 +12,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 
 export default function MyInfo() {
+  const { t } = useTranslation()
   const api = useApi();
   const [myinfo, setMyinfo] = useState<any | null>(null);
   const [imagePreview, setImagePreview] = useState<string | null>(null);
@@ -22,9 +24,9 @@ export default function MyInfo() {
   const dispatch = useDispatch();
   const { user } = useSelector((state: any) => state.auth);
   const genders = [
-    { label: "Male", value: "male" },
-    { label: "Female", value: "female" },
-    { label: "Other", value: "other" },
+    { label: t("hero.male"), value: "male" },
+    { label: t("hero.female"), value: "female" },
+    { label: t("hero.other"), value: "other" },
   ];
   const fetchData = async () => {
     try {
@@ -96,7 +98,7 @@ export default function MyInfo() {
         });
     }
     if (result.status == 200) {
-      toast.success("เปลี่ยนโปรไฟล์สำเร็จ");
+      toast.success(t("alert.upldateProfile200"));
       dispatch(setRefresh(true));
     }
     setTimeout(() => {
@@ -147,13 +149,13 @@ export default function MyInfo() {
           </div>
           <div className="mb-5">
             <label className="block mb-2 text-md font-medium text-gray-300 ">
-              ชื่อผู้ใช้
+              {t("hero.user")}
             </label>
             <input
               type="text"
               id="text"
               className="shadow-sm bg-gray-300 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-              placeholder="ชื่อผู้ใช้"
+              placeholder={t("hero.user")}
               value={myinfo?.name}
               onChange={(e) => {
                 setMyinfo({ ...myinfo, name: e?.target?.value });
@@ -163,13 +165,13 @@ export default function MyInfo() {
           </div>
           <div className="mb-5">
             <label className="block mb-2 text-md font-medium text-gray-300 ">
-              อีเมลของคุณ
+              {t("label.email")}
             </label>
             <input
               type="email"
               id="email"
               className="shadow-sm bg-gray-300 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-              placeholder="อีเมลของคุณ"
+              placeholder={t("label.email")}
               value={myinfo?.email}
               onChange={(e) => {
                 setMyinfo({ ...myinfo, name: e?.target?.value });
@@ -179,12 +181,12 @@ export default function MyInfo() {
           </div>
           <div className="mb-5">
             <label className="block mb-2 text-md font-medium text-gray-300">
-              โทรศัพท์
+              {t("label.phone")}
             </label>
             <input
               type="number"
               className="shadow-smg bg-gray-300 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
-              placeholder="โทรศัพท์..."
+              placeholder={t("label.phone")}
               value={myinfo?.phone}
               onChange={(e) => {
                 setMyinfo({ ...myinfo, phone: e?.target?.value });
@@ -196,7 +198,7 @@ export default function MyInfo() {
           <div className="mb-5 md:flex justify-between sm:block">
             <div className="mb-5 md:mb-0">
               <label className="block mb-2 text-md font-medium text-gray-300">
-                วันเกิด
+                {t("label.db")}
               </label>
               <ReactDatePicker
                 selected={startDate}
@@ -214,12 +216,13 @@ export default function MyInfo() {
 
             <div>
               <label className="block mb-2 text-md font-medium text-gray-300 dark:text-white">
-                สถานะ
+                {t("label.status")}
               </label>
               <input
                 type="text"
                 className="shadow-sm bg-gray-300 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
-                placeholder="สถานะ"
+                placeholder={t("label.status")}
+
                 disabled={true}
                 value={myinfo?.status}
               />
@@ -249,14 +252,14 @@ export default function MyInfo() {
 
           <div className="mb-5">
             <label className="block mb-2 text-md font-medium text-gray-300 dark:text-white">
-              ที่อยู่
+              {t("label.address")}
             </label>
 
             <textarea
               id="chat"
               rows={4}
               className="block w-full text-md text-gray-900 bg-gray-300 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="ที่อยู่..."
+              placeholder={t("label.address")}
               value={myinfo?.address}
               onChange={(e) => {
                 setMyinfo({ ...myinfo, address: e?.target?.value });
@@ -269,7 +272,7 @@ export default function MyInfo() {
             type="submit"
             className="text-white bg-yellow-500 hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-md px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           >
-            บันทึก
+            {t("button.sumbit")}
           </button>
         </form>
       </div>

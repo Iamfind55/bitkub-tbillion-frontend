@@ -1,5 +1,6 @@
 "use client";
 import { IDecodeToken, ILogins, ITokens } from "@/interface/logintype";
+import { useTranslation } from "@/lib/i18n";
 import { login } from "@/redux/slice/authSlice";
 import { ActionLogin } from "@/services/services";
 import Button from "@/utils/Button";
@@ -12,8 +13,9 @@ import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
-
 export default function FormLogin() {
+
+  const { t } = useTranslation();
   const router = useRouter();
   const dispath = useDispatch();
   const { user } = useSelector((state: any) => state.auth);
@@ -56,7 +58,7 @@ export default function FormLogin() {
             })
           );
           // Swal.fire('warning', 'login success','success');
-          toast.success("เข้าสู่ระบบสำเร็จ");
+          toast.success(t("alert.login200"));
           if (data?.role === "admin" || data?.role === "operator") {
             setTimeout(() => {
               window.location.href = "/backend";
@@ -88,32 +90,32 @@ export default function FormLogin() {
       <Textfield
         name="email"
         value={form.email}
-        placeholder="กรอกหมายเลขโทรศัพท์ หรือ อีเมล์ของคุณ"
+        placeholder={t("login.email")}
         id="email"
-        title="หมายเลขโทรศัพท์ / อีเมล"
+        title={t("login.email")}
         onChange={handleForm}
         required
       />
       <Password
         name="password"
         value={form.password}
-        placeholder="รหัสผ่าน"
+        placeholder={t("login.password")}
         id="password"
-        title="รหัสผ่าน"
+        title={t("login.password")}
         onChange={handleForm}
         required
       />
       <Button
-        title="เข้าสู่ระบบ"
+        title={t("login.title")}
         type="submit"
         className="bg-warning rounded mt-3 py-3 text-large text-white"
       />
       <div className="flex justify-between">
         <Link href="/forgotpassword" className="underline underline-offset-1">
-          ลืมรหัสผ่าน
+          {t("login.forgot")}
         </Link>
         <Link href="/register" className="underline underline-offset-1">
-          ลงทะเบียนเลย
+          {t("login.signup")}
         </Link>
       </div>
     </form>

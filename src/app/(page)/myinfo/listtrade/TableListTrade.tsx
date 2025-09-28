@@ -4,6 +4,7 @@ import { FormatDatetime, FormatNumber } from "@/helper/format";
 import Iconchart from "@/icon/iconchart";
 import Iconcirclecheck from "@/icon/iconcirclecheck";
 import { ITrade } from "@/interface/interfaceType";
+import { useTranslation } from "@/lib/i18n";
 import { refreshwallet } from "@/redux/slice/walletSlice";
 import useApi from "@/services/api";
 import Select from "@/utils/Select";
@@ -11,8 +12,10 @@ import React, { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
 import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
- 
+
+
 export default function TableListTrade() {
+  const { t } = useTranslation()
   const [data, setData] = useState<ITrade[]>([]);
   const dispatch = useDispatch();
   const [pagination, setPagination] = useState<{
@@ -53,7 +56,7 @@ export default function TableListTrade() {
       if (res.status === 200) {
         dispatch(refreshwallet());
         loadwithdraw();
-      toast.success('โอนสำเร็จ');
+        toast.success(t("hero.trade200"));
       } else {
         console.log(res);
       }
@@ -73,7 +76,7 @@ export default function TableListTrade() {
           <span className="text-[12px] block p-0">
             <Iconcirclecheck />
           </span>{" "}
-          โอนย้าย
+          {t("hero.move200")}
         </button>
       );
     } else if (data?.isTransfer === true && data?.status === "win") {
@@ -148,12 +151,11 @@ export default function TableListTrade() {
                   {getstatustrade(item)}
                   <div className="w-full grid grid-cols-2 gap-x-5">
                     <div className="grid-col-1">
-                      <div>จำนวน: {FormatNumber(Number(item?.quantity))}$</div>
-                      <div>กำไร: {item?.percent}%</div>
+                      <div>{t("label.amount")}: {FormatNumber(Number(item?.quantity))}$</div>
+                      <div>{t("hero.percent")}: {item?.percent}%</div>
                       <div className="text-lg font-bold text-success">
-                        ทั้งหมด:
+                        {t("hero.all")}
                         <span>
-                          {" "}
                           {FormatNumber(
                             Number(item?.quantity) + Number(item?.price)
                           )}
@@ -166,13 +168,13 @@ export default function TableListTrade() {
                     </div>
                     <div className="grid-col-1 flex flex-col ">
                       <div>
-                        ประเภท:{" "}
+                        {t("hero.type")}:
                         <span className="uppercase text-warning">
                           {item?.type}
                         </span>
                       </div>
                       <div>
-                        ซื้อขาย:
+                        {t("hero.trade")}:
                         {item?.trade === "up" ? (
                           <span className="text-success uppercase"> ขึ้น</span>
                         ) : (
@@ -180,7 +182,7 @@ export default function TableListTrade() {
                         )}
                       </div>
                       {/* <div>{item?.tradeId}</div> */}
-                      <div>โอนย้าย: {item?.isTransfer ? " Yes" : " No"}</div>
+                      <div>{t("hero.move200")}: {item?.isTransfer ? " Yes" : " No"}</div>
                       <div className="flex gap-x-2 items-center">
                         {getstatustransfer(item)}
                       </div>
@@ -191,16 +193,15 @@ export default function TableListTrade() {
             </div>
           ))
         ) : (
-          <div className="col-span-12 text-center">ไม่มีข้อมูล</div>
+          <div className="col-span-12 text-center">{t("hero.notData")}</div>
         )}
       </div>
 
       <div
-        className={`mt-5 ${
-          Number(pagination?.total) > Number(pagination?.pageSize)
+        className={`mt-5 ${Number(pagination?.total) > Number(pagination?.pageSize)
             ? "block"
             : "hidden"
-        }`}
+          }`}
       >
         <ReactPaginate
           activeClassName="active"
