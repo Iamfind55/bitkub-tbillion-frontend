@@ -68,8 +68,7 @@ export default async function page() {
         className="min-h-screen w-full bg-cover md:pb-10 pb-5 bg-center "
         style={{
           backgroundImage:
-            'linear-gradient(#68686841, #222225f8), url("/images/bg-login.jpg")',
-          // backgroundBlendMode: 'overlay',
+            'linear-gradient(#68686841, #222225f8), url("https://images.pexels.com/photos/8919573/pexels-photo-8919573.jpeg")',
           backgroundSize: "cover",
         }}
       >

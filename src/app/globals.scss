@@ -174,11 +174,14 @@
 }
 
 .swiper-button-prev, .swiper-button-next{
-  color:#16203b!important;
+  color:#ffffff!important;
+  border: 1px solid white;
+  padding: 10px;
+  border-radius: 5px;
 }
 
 .swiper-button-prev:after, .swiper-button-next:after{
-  font-size: 30px!important;
+  font-size: 16px !important;
   font-weight: bold; 
   display: flex;
   justify-content: center;
