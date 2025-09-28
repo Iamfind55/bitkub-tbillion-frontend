@@ -109,6 +109,7 @@ const translations = {
     "label.password": "Password",
     "label.email": "Email",
     "label.address": "Address",
+    "label.amount": "Amount",
 
     "label.second": "Second",
     "label.minute": "Minute",
@@ -157,7 +158,7 @@ const translations = {
     "hero.trade200": "Transfer success",
     "hero.move200": "Transfer",
     "hero.all": "All",
-    "hero.pecent": "Percent",
+    "hero.percent": "Percent",
     "hero.type": "Type",
     "hero.trade": "Trade",
 
@@ -426,7 +427,7 @@ const translations = {
     "hero.trade200": "โอนสำเร็จ",
     "hero.move200": "โอนย้าย",
     "hero.all": "ทั้งหมด",
-    "hero.pecent": "เปอร์เซ็นต์",
+    "hero.percent": "เปอร์เซ็นต์",
     "hero.type": "หมวดหมู่",
     "hero.trade": "ซื้อขาย",
 
