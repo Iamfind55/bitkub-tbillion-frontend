@@ -3,12 +3,14 @@ import { limitOptions } from "@/enum/option";
 import { FormatDatetime, FormatNumber } from "@/helper/format";
 import Iconattachmoney from "@/icon/iconattachmoney";
 import { ITransaction } from "@/interface/interfaceType";
+import { useTranslation } from "@/lib/i18n";
 import useApi from "@/services/api";
 import Select from "@/utils/Select";
 import React, { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
 
 export default function TableTransaction() {
+  const {t}=useTranslation()
   const [mytransaction, setMytransaction] = useState<ITransaction[]>([]);
   const [pagination, setPagination] = useState<{
     pageSize: number;
@@ -87,7 +89,7 @@ export default function TableTransaction() {
                   <div>
                     <div className="text-md uppercase">ประเภท: {item?.type}</div>
                     <div className="text-sm text-success font-bold uppercase">
-                      จำนวน: {FormatNumber(Number(item?.amount))}$
+                      {t("hero.amount")}: {FormatNumber(Number(item?.amount))}$
                     </div>
                     {getStatus(item?.status)}
                     <div className="text-[10px] text-stone-200 mt-1">
@@ -99,7 +101,7 @@ export default function TableTransaction() {
             </div>
           ))
         ) : (
-          <div className="text-center col-span-12">ไม่มีข้อมูล</div>
+          <div className="text-center col-span-12">{t("hero.notData")}</div>
         )}
       </div>
 
