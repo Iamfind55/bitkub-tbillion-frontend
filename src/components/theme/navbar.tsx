@@ -130,6 +130,7 @@ export default function Navbar() {
             <div className="flex items-center gap-5 ">
               {auth?.name ? (
                 <>
+                  <LanguageSwitcher />
                   <div className="relative" ref={modalRef}>
                     <div
                       onClick={() => setIsprofile(!isprofile)}
@@ -189,7 +190,7 @@ export default function Navbar() {
                           className="cursor-pointer flex gap-2 items-center hover:opacity-80"
                         >
                           <Iconuser />
-                          <span>บัญชีของฉัน</span>
+                          <span>{t("navbar.myaccount")}</span>
                         </li>
                         <li
                           onClick={() => {
@@ -199,7 +200,7 @@ export default function Navbar() {
                           className="cursor-pointer flex gap-2 items-center hover:opacity-80"
                         >
                           <Iconkey />
-                          <span>เปลี่ยนรหัสผ่าน</span>
+                          <span>{t("navbar.change_password")}</span>
                         </li>
                         <li
                           onClick={() => {
@@ -208,14 +209,14 @@ export default function Navbar() {
                           className="cursor-pointer flex gap-2 items-center hover:opacity-80"
                         >
                           <Iconsecurity />
-                          <span>ยืนยันตัวตน</span>
+                          <span>{t("navbar.authentication")}</span>
                         </li>
 
                         <li
                           className="cursor-pointer flex gap-2 items-center hover:opacity-80"
                           onClick={handleLogout}
                         >
-                          <Iconsignout /> ออกจากระบบ
+                          <Iconsignout /> {t("navbar.logout")}
                         </li>
                       </ul>
                     </div>
@@ -315,6 +316,7 @@ export default function Navbar() {
         <div className="flex flex-col justify-center gap-5 mt-5">
           {auth?.name ? (
             <>
+              <LanguageSwitcher />
               <Link
                 href="/myinfo"
                 onClick={() => setToggle(false)}
@@ -341,27 +343,27 @@ export default function Navbar() {
                 onClick={() => setToggle(false)}
                 className="text-center w-full justify-center active:text-white/80 text-white flex items-center gap-1 "
               >
-                บัญชีของฉัน
+                {t("navbar.myaccount")}
               </Link>
               <Link
                 href="/myinfo/changepassword"
                 onClick={() => setToggle(false)}
                 className="text-center w-full justify-center active:text-white/80 text-white flex items-center gap-1 "
               >
-                เปลี่ยนรหัสผ่าน
+                {t("navbar.change_password")}
               </Link>
               <Link
                 href="/myinfo/privacy"
                 onClick={() => setToggle(false)}
                 className="text-center w-full justify-center active:text-white/80 text-white flex items-center gap-1 "
               >
-                ยืนยันตัวตน
+                {t("navbar.authentication")}
               </Link>
               <button
                 onClick={handleLogout}
                 className="text-center active:text-white/80"
               >
-                ออกจากระบบ
+                {t("navbar.logout")}
               </button>
             </>
           ) : (

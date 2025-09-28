@@ -65,7 +65,7 @@ export default function TableBank() {
   const handleSubmitCreate = (e: any) => {
     e.preventDefault();
     api({ url: 'banks', method: 'post', params: formCreateBank }).then((res) => {
-     toast.success('สร้างสำเร็จ');
+      toast.success('สร้างสำเร็จ');
       loadBank();
       handleCreate();
     })
@@ -90,7 +90,7 @@ export default function TableBank() {
     const data = Object.fromEntries(formData)
     api({ url: 'banks/' + bankId, method: 'put', params: data }).then((res) => {
       if (res.status === 200) {
-       toast.success('อัปเดตความสำเร็จ');
+        toast.success('อัปเดตความสำเร็จ');
         handleUpdate();
         loadBank();
       } else {
@@ -133,9 +133,9 @@ export default function TableBank() {
             <Textfield required id='accountName' name='accountName' onChange={onkeyupCreate} placeholder='กรอกชื่อบัญชี' title='ชื่อบัญชี' />
             <Textfield required id='accountNumber' name='accountNumber' onChange={onkeyupCreate} placeholder='กรอกเลขบัญชี' title='เลขบัญชี' />
 
-            <div className="w-full flex justify-between">
+            <div className="w-full flex justify-end gap-2">
               <Button type='button' title='ปิด' onClick={handleCreate} className='bg-danger text-white rounded mt-5 inline-block' />
-              <Button type='submit' title='บันทึก' className='bg-primary text-white rounded mt-5 inline-block' />
+              <Button type='submit' title='บันทึก' className='bg-yellow-500 text-white rounded mt-5 inline-block' />
             </div>
           </form>
         </MyModal>
@@ -150,7 +150,7 @@ export default function TableBank() {
 
             <div className="w-full flex justify-between">
               <Button type='button' title='ปิด' onClick={handleUpdate} className='bg-danger text-white rounded mt-5 inline-block' />
-              <Button type='submit' title='บันทึก' className='bg-primary text-white rounded mt-5 inline-block' />
+              <Button type='submit' title='บันทึก' className='bg-yellow-500 text-white rounded mt-5 inline-block' />
             </div>
           </form>
         </MyModal>

@@ -1,83 +1,77 @@
+"use client"
+
 import Iconbank from "@/icon/iconbank";
 import Iconbill from "@/icon/iconbill";
-import Iconbilloutline from "@/icon/iconbilloutline";
-import Iconcall from "@/icon/iconcall";
-import Iconcalltime from "@/icon/iconcalltime";
 import Iconcardoutline from "@/icon/iconcardoutline";
 import Iconchartoutline from "@/icon/iconchartoutline";
-import Icondeposit from "@/icon/icondeposit";
-import Iconhistory from "@/icon/iconhistory";
-import Iconreturn from "@/icon/iconreturn";
 import Iconsecurity from "@/icon/iconsecurity";
-import Icontopup from "@/icon/icontopup";
 import Iconworkstory from "@/icon/iconworkstory";
+import { useTranslation } from "@/lib/i18n";
 import Link from "next/link";
 import React from "react";
 import { TfiWallet } from "react-icons/tfi";
 type Props = {};
 
-export default function page({}: Props) {
+export default function page({ }: Props) {
+  const { t } = useTranslation();
+
   const listmyinfo = [
     {
       icon: <Iconbank />,
-      title: "บัญชีธนาคาร",
+      title: t("account.bank_account"),
       link: "/myinfo/bank",
     },
-    
+
     {
       icon: <TfiWallet />,
-      title: "ฝากเหรียญ",
+      title: t("account.coin_deposit"),
       link: "/myinfo/deposit",
     },
     {
       icon: <TfiWallet />,
-      title: "ถอนเหรียญ",
+      title: t("account.coin_withdraw"),
       link: "/myinfo/withdrawcoin",
     },
     {
       icon: <Iconworkstory />,
-      title: "ธุรกรรมเหรียญ",
+      title: t("account.coin_transactioncoin"),
       link: "/myinfo/transactioncoin",
     },
-  
+
     {
       icon: <Iconbill />,
-      title: "ถอนเงิน",
+      title: t("account.money_withdraw"),
       link: "/myinfo/withdraw",
     },
     {
       icon: <Iconchartoutline />,
-      title: "รายการซื้อขาย",
+      title: t("account.listtrade"),
       link: "/myinfo/listtrade",
     },
     {
       icon: <Iconworkstory />,
-      title: "ธุรกรรม",
+      title: t("account.transaction"),
       link: "/myinfo/transaction",
     },
-    // {
-    //   icon: <Iconcalltime />,
-    //   title: "ติดต่อ",
-    //   link: "/myinfo/contact",
-    // },
     {
       icon: <Iconcardoutline />,
-      title: "บัญชีของฉัน",
+      title: t("account.account"),
       link: "/myinfo/account",
     },
     {
       icon: <Iconsecurity />,
-      title: "ยืนยันตัวตน",
+      title: t("account.privacy"),
       link: "/myinfo/privacy",
     },
   ];
+
   return (
     <div>
       <div className="container px-5 mx-auto pt-[120px] pb-5">
         <div className="w-full flex justify-center">
           <div className="w-full flex justify-center md:w-3/4 lg:w-2/3 xl:w-3/6 rounded shadow-lg bg-info">
-            <div className="text-bold text-2xl rounded bg-success px-10 font-bold py-2 inline-block absolute translate-y-[-20px]">
-              ข้อมูลของฉัน
+            <div className="text-bold text-md rounded bg-success px-10 font-bold py-2 inline-block absolute translate-y-[-20px]">
+              {t("account.my_info")}
             </div>
 
             <div className="pt-10 pb-10 px-5 w-full grid grid-cols-12  md:gap-y-10 gap-y-5 text-warning">
@@ -88,10 +82,10 @@ export default function page({}: Props) {
                   key={index}
                 >
                   <div className="w-full flex flex-col items-center text-center">
-                    <div className="md:text-3xl text-2xl bg-dark flex justify-center items-center rounded-full md:w-20 md:h-20 w-16 h-16">
+                    <div className="md:text-2xl text-xl bg-dark flex justify-center items-center rounded-full md:w-16 md:h-16 w-12 h-12">
                       {res.icon}
                     </div>
-                    <span className="mt-3">{res.title}</span>
+                    <span className="text-sm mt-3">{res.title}</span>
                   </div>
                 </Link>
               ))}

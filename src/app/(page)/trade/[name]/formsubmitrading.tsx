@@ -151,7 +151,7 @@ export default function Formsubmitrading() {
         dispatch(opentrade()); // ເປິດ status trade
         // toast.success("ทำธุรกรรมสำเร็จ.");
         setOpenmodal(false);
-        
+
         // window.location.reload();
       } else {
         console.log(res);
@@ -161,14 +161,12 @@ export default function Formsubmitrading() {
 
   return (
     <div
-      className={`${
-        redux?.trade?.status ? "pointer-events-none select-none" : ""
-      } `}
+      className={`${redux?.trade?.status ? "pointer-events-none select-none" : ""
+        } `}
     >
       <div
-        className={`grid grid-cols-12 gap-5  ${
-          redux?.trade?.status ? "hidden" : "block my-3"
-        }`}
+        className={`grid grid-cols-12 gap-5  ${redux?.trade?.status ? "hidden" : "block my-3"
+          }`}
       >
         <div className="col-span-12 flex justify-center gap-5">
           <Button
@@ -178,9 +176,8 @@ export default function Formsubmitrading() {
               setTrade({ ...trade, trade: e.currentTarget.value });
               setOpenmodal(true);
             }}
-            className={`bg-danger md:py-3 py-2 text-default rounded select-none md:w-[150px] w-full ${
-              redux?.trade?.status ? "opacity-70" : ""
-            }`}
+            className={`bg-danger md:py-3 py-2 text-default rounded select-none md:w-[150px] w-full ${redux?.trade?.status ? "opacity-70" : ""
+              }`}
           />
           <Button
             title="ขึ้น"
@@ -189,12 +186,12 @@ export default function Formsubmitrading() {
               setTrade({ ...trade, trade: e.currentTarget.value });
               setOpenmodal(true);
             }}
-            className={`bg-success md:py-3 py-2 text-default rounded select-none md:w-[150px] w-full ${
-              redux?.trade?.status ? "opacity-70" : ""
-            }`}
+            className={`bg-success md:py-3 py-2 text-default rounded select-none md:w-[150px] w-full ${redux?.trade?.status ? "opacity-70" : ""
+              }`}
           />
         </div>
       </div>
+
       <MyModal
         isOpen={openmodal}
         className="md:w-[400px] w-[300px] "
@@ -225,11 +222,10 @@ export default function Formsubmitrading() {
                     name="number"
                     onClick={handleChooseDuraction}
                     value={item?.durationId}
-                    className={`${
-                      trade.duration === item?.durationId
-                        ? "bg-success"
-                        : "bg-info/90 "
-                    }
+                    className={`${trade.duration === item?.durationId
+                      ? "bg-success"
+                      : "bg-info/90 "
+                      }
                   text-sm rounded select-none w-full text-white
                   rounded-fixed flex items-center justify-center hover:opacity-80  
                   transition duration-300 px-[10px] py-2 lg:text-md font-bold active:scale-105`}
@@ -306,9 +302,8 @@ export default function Formsubmitrading() {
               }}
               value={1000}
               className={`
-              ${
-                trade.quantity == 1000 ? "bg-success" : "bg-info/90"
-              }              
+              ${trade.quantity == 1000 ? "bg-success" : "bg-info/90"
+                }              
                   text-sm rounded select-none w-full text-white
                   rounded-fixed flex flex-col items-center justify-center hover:opacity-80  
                   transition duration-300 px-[10px] py-2 lg:text-md font-bold active:scale-105`}
@@ -345,9 +340,8 @@ export default function Formsubmitrading() {
               <Button
                 title="ยืนยัน"
                 value="confirt"
-                className={`bg-success text-default rounded py-3 select-none w-full ${
-                  redux?.trade?.status ? "opacity-70" : ""
-                }`}
+                className={`bg-success text-default rounded py-3 select-none w-full ${redux?.trade?.status ? "opacity-70" : ""
+                  }`}
               />
             )}
           </div>

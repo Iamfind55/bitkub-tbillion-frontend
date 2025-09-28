@@ -1,17 +1,19 @@
+"use client"
+
+import { useTranslation } from "@/lib/i18n";
 import { CiMail, CiPhone } from "react-icons/ci";
 
 export default function page() {
+  const { t } = useTranslation();
 
   return (
     <div>
       <div className="container px-8 sm:px-16 mx-auto pt-[120px] select-none">
         <div className="space-y-8">
           <div>
-            <h2 className="text-2xl font-bold text-foreground mb-4 text-balance">Get in Touch with Our Trading Experts</h2>
+            <h2 className="text-2xl font-bold text-foreground mb-4 text-balance">{t("contact.title")}</h2>
             <p className="text-md text-muted-foreground leading-relaxed">
-              {
-                "Need help with your crypto trading strategy? Our team of experts is here to support you 24/7 with personalized guidance and technical assistance."
-              }
+              {t("contact.description")}
             </p>
           </div>
 
@@ -22,7 +24,7 @@ export default function page() {
                   <CiMail className="h-5 w-5 text-orange-500" />
                 </div>
                 <div>
-                  <h3 className="text-md font-semibold text-card-foreground mb-1">Email Support</h3>
+                  <h3 className="text-md font-semibold text-card-foreground mb-1">{t("contact.email")}</h3>
                   <a
                     href="mailto:support@cryptotradepro.com"
                     className="text-sm text-accent hover:text-accent/80 transition-colors font-medium"
@@ -39,7 +41,7 @@ export default function page() {
                   <CiPhone className="h-5 w-5 text-orange-500" />
                 </div>
                 <div>
-                  <h3 className="text-md font-semibold text-card-foreground mb-1">Phone Support</h3>
+                  <h3 className="text-md font-semibold text-card-foreground mb-1">{t("contact.phone")}</h3>
                   <a href="tel:+1-800-CRYPTO-1" className="text-sm text-accent hover:text-accent/80 transition-colors font-medium">
                     +856 20 93046151
                   </a>

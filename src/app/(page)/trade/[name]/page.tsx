@@ -16,7 +16,7 @@ export default async function page() {
           </div>
         </div>
         {/* <div className="col-span-12">
-          <Listtrade/>
+          <Listtrade />
         </div> */}
       </div>
     </div>

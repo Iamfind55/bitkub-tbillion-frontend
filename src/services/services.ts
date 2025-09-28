@@ -71,7 +71,7 @@ export const getTypetrade = async (type: any) => {
     ).then((res) => res.json());
   } else {
     return fetch(
-      `${process.env.NEXT_PUBLIC_BINANCE}/api/v3/uiKlines?limit=200&symbol=BTCUSDT&interval=1m`
+      `${process.env.NEXT_PUBLIC_BINANCE}/api/v3/uiKlines?limit=200&symbol=BTCUSDT&interval=1s`
     ).then((res) => res.json());
   }
 };

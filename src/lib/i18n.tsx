@@ -28,6 +28,10 @@ const translations = {
     // navbar
     "navbar.login": "Login",
     "navbar.register": "Register",
+    "navbar.myaccount": "My account",
+    "navbar.change_password": "Change password",
+    "navbar.authentication": "Verify",
+    "navbar.logout": "Log out",
 
     // faq
     "faq.title": "Frequently Asked Questions",
@@ -54,7 +58,25 @@ const translations = {
     // layout
     "layout.home_page": "Home",
     "layout.trade": "Trade",
-    "layout.my_account": "My Account"
+    "layout.my_account": "My Account",
+
+    // contact us
+    "contact.title": "Get in Touch with Our Trading Experts",
+    "contact.description": "Need help with your crypto trading strategy? Our team of experts is here to support you 24/7 with personalized guidance and technical assistance.",
+    "contact.email": "Email Support",
+    "contact.phone": "Phone Support",
+
+    // my account page:
+    "account.my_info":"My infomation",
+    "account.bank_account": "Bank Account",
+    "account.coin_deposit": "Coin Deposit",
+    "account.coin_withdraw": "Coin Withdrawal",
+    "account.coin_transactioncoin": "Coin Transactions",
+    "account.money_withdraw": "Money Withdrawal",
+    "account.listtrade": "Trade List",
+    "account.transaction": "Transactions",
+    "account.account": "My Account",
+    "account.privacy": "Identity Verification"
 
   },
   lo: {},
@@ -73,6 +95,10 @@ const translations = {
     // navbar
     "navbar.login": "เข้าสู่ระบบ",
     "navbar.register": "ลงชื่อเข้าใช้",
+    "navbar.myaccount": "บัญชีของฉัน",
+    "navbar.change_password": "เปลี่ยนรหัสผ่าน",
+    "navbar.authentication": " ยืนยันตัวตน",
+    "navbar.logout": "ออกจากระบบ",
 
     // faq
     "faq.title": "คำถามที่พบบ่อย",
@@ -99,7 +125,28 @@ const translations = {
     // layout
     "layout.home_page": "หน้าแรก",
     "layout.trade": "ซื้อขาย",
-    "layout.my_account": "บัญชีฉัน"
+    "layout.my_account": "บัญชีฉัน",
+
+    //contact us
+    "contact.title": "ติดต่อทีมผู้เชี่ยวชาญด้านการเทรดของเรา",
+    "contact.description": "ต้องการความช่วยเหลือเกี่ยวกับกลยุทธ์การเทรดคริปโตของคุณหรือไม่? ทีมผู้เชี่ยวชาญของเราพร้อมให้การสนับสนุนตลอด 24 ชั่วโมงทุกวัน พร้อมคำแนะนำส่วนบุคคลและความช่วยเหลือทางเทคนิค",
+    "contact.email": "อีเมลซัพพอร์ต",
+    "contact.phone": "ซัพพอร์ตทางโทรศัพท์",
+
+    // my account page:
+    "account.my_info": "ข้อมูลของฉัน",
+    "account.bank_account": "บัญชีธนาคาร",
+    "account.coin_deposit": "ฝากเหรียญ",
+    "account.coin_withdraw": "ถอนเหรียญ",
+    "account.coin_transactioncoin": "ธุรกรรมเหรียญ",
+    "account.money_withdraw": "ถอนเงิน",
+    "account.listtrade": "รายการซื้อขาย",
+    "account.transaction": "ธุรกรรม",
+    "account.account": "บัญชีของฉัน",
+    "account.privacy": "ยืนยันตัวตน",
+
+    // Bank account
+    
   },
 }
 
