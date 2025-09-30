@@ -152,7 +152,7 @@ export default function TableListTrade() {
                   <div className="w-full grid grid-cols-2 gap-x-5">
                     <div className="grid-col-1">
                       <div>{t("hero.amount")}: {FormatNumber(Number(item?.quantity))}$</div>
-                      <div>{t("hero.pecent")}: {item?.percent}%</div>
+                      <div>{t("hero.percent")}: {item?.percent}%</div>
                       <div className="text-lg font-bold text-success">
                         {t("hero.all")}
                         <span>

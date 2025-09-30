@@ -65,6 +65,8 @@ const translations = {
     "contact.description": "Need help with your crypto trading strategy? Our team of experts is here to support you 24/7 with personalized guidance and technical assistance.",
     "contact.email": "Email Support",
     "contact.phone": "Phone Support",
+    "contact.line": "Line Support",
+
 
     // my account page:
     "account.my_info": "My infomation",
@@ -93,9 +95,9 @@ const translations = {
     "alert.message500": "Interal server error",
     "alert.resetPassword": "Reset password successfull",
     "alert.notFoundEmail": "User or email not found",
-    "alert.upldateProfile200": "เปลี่ยนโปรไฟล์สำเร็จ",
+    "alert.upldateProfile200": "Change password successful",
 
-
+    "forgot.title":"Forgot password",
 
 
     "trade.timerequired": "Please select time",
@@ -118,12 +120,23 @@ const translations = {
     "label.week": "Week",
     "label.db": "Birdth day",
     "label.status": "Status",
+    "label.olderPassword": "Current password",
+    "label.newPassword": "New password",
+    "label.confirmPassword": "Confirm password",
+
+    "placeholder.newPassword": "Enter new password",
+    "placeholder.confirm": "Enter confirm password",
+    "placeholder.olderPassword": "Enter current password",
 
     "label.reset": "Reset",
     "button.down": "Down",
     "button.up": "Up",
     "button.sumbit": "Submit",
     "button.uplpoadNow": "Upload now",
+    "button.savechange":"Save change",
+
+
+
 
     // verification
     "hero.verification": "Verification",
@@ -276,6 +289,7 @@ const translations = {
     "contact.description": "ต้องการความช่วยเหลือเกี่ยวกับกลยุทธ์การเทรดคริปโตของคุณหรือไม่? ทีมผู้เชี่ยวชาญของเราพร้อมให้การสนับสนุนตลอด 24 ชั่วโมงทุกวัน พร้อมคำแนะนำส่วนบุคคลและความช่วยเหลือทางเทคนิค",
     "contact.email": "อีเมลซัพพอร์ต",
     "contact.phone": "ซัพพอร์ตทางโทรศัพท์",
+    "contact.line": "ซัพพอร์ตทางสาย",
 
     // my account page:
     "account.my_info": "ข้อมูลของฉัน",
@@ -357,6 +371,8 @@ const translations = {
     "login.forgot": "ลืมรหัสผ่าน",
     "login.signup": "ลงทะเบียนเลย",
     "register.title": "ลงชื่อเข้าใช้บัญชีของคุณ",
+    "forgot.title":"เปลี่ยนรหัสผ่าน",
+
 
 
     "alert.login200": "เข้าสู่ระบบสำเร็จ",
@@ -388,12 +404,22 @@ const translations = {
     "label.week": "อาทิตย์",
     "label.db": "วันเกิด",
     "label.status": "สถานะ",
+    "label.olderPassword": "รหัสผ่านเก่า",
+    "label.newPassword": "รหัสผ่านใหม่",
+    "label.confirmPassword": "ยืนยันรหัสผ่าน",
+
+    "placeholder.newPassword": "ป้อนรหัสผ่านใหม่",
+    "placeholder.confirm": "ป้อนยืนยันรหัสผ่าน",
+    "placeholder.olderPassword": "ป้อนรหัสผ่านเก่า",
+
+
 
     "label.reset": "รีเซ็ต",
     "button.down": "ลง",
     "button.up": "ขึ้น",
     "button.sumbit": "ส่ง",
     "button.uplpoadNow": "อัปโหลดตอนนี้",
+    "button.savechange":"บันทึกการเปลี่ยนแปลง",
 
     // verification
     "hero.verification": "การยืนยันตัวตน",

@@ -74,7 +74,7 @@ export default function FormForgotpassword() {
         className="grid grid-cols-12 gap-5 p-5 lg:p-8 w-full"
       >
         <div className="col-span-12 mb-5">
-          <div className="text-3xl text-center font-medium">ลืมรหัสผ่าน</div>
+          <div className="text-3xl text-center font-medium">{t("login.forgot")}</div>
         </div>
         <div className="col-span-12">
           <Textfield

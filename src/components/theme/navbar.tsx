@@ -116,7 +116,7 @@ export default function Navbar() {
         <div className="mx-auto container flex items-center justify-between  px-5">
           <Link href="/" className="logo flex items-center">
             <img
-              src="/new-logo/logo.jpeg"
+              src="/new-logo/logo.png"
               alt="logo"
               className="h-8 w-8 lg:h-10 lg:w-10 rounded-sm"
             />

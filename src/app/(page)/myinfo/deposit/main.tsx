@@ -99,7 +99,7 @@ function Main() {
                 />
               ) : (
                 <img
-                  src="/images/binace_qrcode.jpg"
+                  src="/images/btc-qrcode.jpeg"
                   alt="image"
                   className="w-40 h-40"
                 />
@@ -108,7 +108,7 @@ function Main() {
             <div className="border rounded border-slate-400/30 px-5 py-2 mt-5 text-sm text-gray-200">
               <div>
                 <div className="text-slate-400">{t("deposit.network")}:</div>{" "}
-                {dataqr[0]?.name || "Tron (TRC20)"}
+                {dataqr[0]?.name || "BTC"}
               </div>
               <div className="border-t border-slate-400/30 my-2" />
               <div>

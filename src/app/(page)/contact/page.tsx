@@ -2,6 +2,7 @@
 
 import { useTranslation } from "@/lib/i18n";
 import { CiMail, CiPhone } from "react-icons/ci";
+import { FaLine } from "react-icons/fa";
 
 export default function page() {
   const { t } = useTranslation();
@@ -38,12 +39,12 @@ export default function page() {
             <div className="w-full p-4 bg-card border border-yellow-500 rounded-md">
               <div className="flex items-start gap-4">
                 <div className="p-2 bg-orange-100 rounded-lg border border-orange-300">
-                  <CiPhone className="h-5 w-5 text-orange-500" />
+                  <FaLine className="h-5 w-5 text-orange-500" />
                 </div>
                 <div>
-                  <h3 className="text-md font-semibold text-card-foreground mb-1">{t("contact.phone")}</h3>
-                  <a href="tel:+1-800-CRYPTO-1" className="text-sm text-accent hover:text-accent/80 transition-colors font-medium">
-                    +856 20 93046151
+                  <h3 className="text-md font-semibold text-card-foreground mb-1">{t("contact.line")}</h3>
+                  <a href="https://lin.ee/r22CPLn" className="text-sm text-accent hover:text-accent/80 transition-colors font-medium">
+                    https://lin.ee/r22CPLn
                   </a>
                 </div>
               </div>

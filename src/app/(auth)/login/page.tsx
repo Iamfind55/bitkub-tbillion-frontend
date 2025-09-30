@@ -25,7 +25,7 @@ export default function page() {
               <div className="flex flex-col gap-6 sm:px-2 px-8 max-w-[500px]  min-w-[350px]">
                 <div className="flex justify-center items-center">
                   <Link href="/">
-                    <img src="/new-logo/logo.jpeg" alt="" className="w-20 rounded-sm" />
+                    <img src="/new-logo/logo.png" alt="" className="w-20 rounded-sm" />
                   </Link>
                 </div>
                 <div className="text-3xl text-center font-bold">

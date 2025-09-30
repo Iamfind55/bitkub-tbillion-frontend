@@ -1,13 +1,15 @@
 "use client";
 import Iconkey from "@/icon/iconkey";
 import { IChangepassword } from "@/interface/changepasswordtype";
+import { useTranslation } from "@/lib/i18n";
 import useApi from "@/services/api";
 import Button from "@/utils/Button";
 import Password from "@/utils/Password";
-import React, { useState } from "react";
+import { useState } from "react";
 import { toast } from "react-toastify";
 
 export default function FormChangepassword() {
+  const { t } = useTranslation()
   const api = useApi();
 
   const [data, setData] = useState<IChangepassword>({
@@ -40,7 +42,7 @@ export default function FormChangepassword() {
           <Iconkey />
         </div>
         <h3 className="lg:text-2xl text-xl lg:mt-5 text-warning select-none font-bold text-center ">
-          เปลี่ยนรหัสผ่าน
+          {t("forgot.title")}
         </h3>
         <form
           onSubmit={handlesubmit}
@@ -50,36 +52,36 @@ export default function FormChangepassword() {
             required
             onChange={onkey}
             value={data.oldPassword}
-            placeholder="ป้อนรหัสผ่านเก่า"
+            placeholder={t("placeholder.olderPassword")}
             name="oldPassword"
-            title="รหัสผ่านเก่า"
+            title={t("label.olderPassword")}
           />
           <Password
             required
             onChange={onkey}
             value={data.newPassword}
-            placeholder="ป้อนรหัสผ่านใหม่"
+            placeholder={t("placeholder.newPassword")}
             name="newPassword"
-            title="รหัสผ่านใหม่"
+            title={t("label.newPassword")}
           />
           <Password
             required
             onChange={onkey}
             value={data.confirmPassword}
-            placeholder="ป้อนยืนยันรหัสผ่าน"
+            placeholder={t("placeholder.confirm")}
             name="confirmPassword"
-            title="ยืนยันรหัสผ่าน"
+            title={t("label.confirmPassword")}
           />
 
           <div className="flex gap-2 item-center">
             <Button
               className="bg-warning rounded lg:text-xl text-lg mt-5"
-              title="บันทึกการเปลี่ยนแปลง"
+              title={t("button.savechange")}
             />
             <Button
               type="reset"
               className="border border-gray-200 rounded lg:text-xl text-lg mt-5"
-              title="รีเซ็ต"
+              title={t("label.reset")}
               onClick={() => {
                 setData({
                   confirmPassword: "",

@@ -1,14 +1,15 @@
 "use client";
 import { useTranslation } from "@/lib/i18n";
 import Link from "next/link";
+import { FaLine } from "react-icons/fa";
 function Footer() {
   const { t } = useTranslation();
 
   const socialList = [
     {
-      icon: "",
-      title: "+856 20 93046151",
-      link: "https://lin.ee/NNcSXO3",
+      icon: <FaLine size={20} color="text-white" />,
+      title: "Line",
+      link: "https://lin.ee/r22CPLn",
     },
   ];
   return (
@@ -16,7 +17,7 @@ function Footer() {
       <div className="w-full md:mt-5 grid grid-cols-6 md:grid-cols-6 gap-2">
         <div className="md:col-span-2 col-span-12 text-gray-300">
           <div className="py-2 logo flex items-center">
-            <img src="/new-logo/logo.jpeg" alt="logo" className="h-10 w-10 rounded-sm" />
+            <img src="/new-logo/logo.png" alt="logo" className="h-10 w-10 rounded-sm" />
             <span className="lg:text-2xl text-xl font-bold ml-2 select-none uppercase">
               Tbillions
             </span>
@@ -30,7 +31,10 @@ function Footer() {
           {socialList?.map((item, index) => (
             <div key={index} className="mt-3">
               <Link href={item.link} className="flex">
-                <p className="px-2 flex items-center">{item.title}</p>
+                <div className="px-2 flex items-center">
+                  <div className="p-1 bg-orange-100 rounded-lg border border-orange-300">
+                    <FaLine className="h-5 w-5 text-orange-500" />
+                  </div>&nbsp; {item.title}</div>
               </Link>
             </div>
           ))}
