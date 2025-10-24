@@ -82,7 +82,7 @@ function Main() {
       });
   };
 
-  const coins = [{ qrcode: "/images/btc-image.jpeg", type: "BTC", account: "0x331b24b5ae6c13ada713737c1ecdb979b9f580f9" }, { qrcode: "/images/ether-image.jpeg", type: "ETH", account: "0x331b24b5ae6c13ada713737c1ecdb979b9f580f9" }, { qrcode: "/images/coin-mage.jpeg", type: "COIN", account: "0x331b24b5ae6c13ada713737c1ecdb979b9f580f9" }];
+  const coins = [{ qrcode: "/images/btc-image.jpeg", type: "BTC", account: "0x331b24b5ae6c13ada713737c1ecdb979b9f580f9" }, { qrcode: "/images/ether-image.jpeg", type: "ETH", account: "0x331b24b5ae6c13ada713737c1ecdb979b9f580f9" }, { qrcode: "/images/coin-mage.jpeg", type: "USDT", account: "0x331b24b5ae6c13ada713737c1ecdb979b9f580f9" }];
   const currentCoints = coins.find((item) => item.type === deposit.title);
   return (
     <div className="container mx-auto flex justify-center">
