@@ -27,7 +27,7 @@ export default function Layoutbackend({ children }: Props) {
       ></div>
 
       <div
-        className={`min-w-[260px] bg-primary shadow min-h-screen transition-all duration-200 fixed z-30 top-0 
+        className={`min-w-[260px] bg-black shadow min-h-screen transition-all duration-200 fixed z-30 top-0 
             ${open ? "left-0" : "left-[-260px]"}`}
       >
         <div className="h-[100px] flex items-center py-10">
@@ -35,7 +35,7 @@ export default function Layoutbackend({ children }: Props) {
             href="/backend"
             className="flex w-full justify-center  overflow-hidden"
           >
-            copytrade
+            COYPTRADE
           </Link>
         </div>
 

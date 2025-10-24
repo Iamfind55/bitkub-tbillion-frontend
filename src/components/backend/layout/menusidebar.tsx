@@ -78,7 +78,7 @@ export default function Menusidebar() {
     },
   ];
   return (
-    <div className="menusidebar h-[calc(100vh-100px)]  overflow-y-auto">
+    <div className="menusidebar h-[calc(100vh-100px)]  overflow-y-auto bg-black">
       <ul className="w-full flex flex-col gap-3 px-2 pt-5">
         {listmenu.map((item: any, index: number) => {
           if (item?.link === "/backend") {
