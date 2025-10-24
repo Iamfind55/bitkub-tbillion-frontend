@@ -41,6 +41,7 @@ function Main() {
     title: "",
     amount: "",
     image: "",
+    account: ""
   };
 
   const [loading, setLoading] = useState(false);
@@ -81,6 +82,8 @@ function Main() {
       });
   };
 
+  const coins = [{ qrcode: "/images/btc-image.jpeg", type: "BTC", account: "0x331b24b5ae6c13ada713737c1ecdb979b9f580f9" }, { qrcode: "/images/ether-image.jpeg", type: "ETH", account: "0x331b24b5ae6c13ada713737c1ecdb979b9f580f9" }, { qrcode: "/images/coin-mage.jpeg", type: "COIN", account: "0x331b24b5ae6c13ada713737c1ecdb979b9f580f9" }];
+  const currentCoints = coins.find((item) => item.type === deposit.title);
   return (
     <div className="container mx-auto flex justify-center">
       <form
@@ -90,31 +93,27 @@ function Main() {
         <div>
           <div className="mt-[80px]">
             <p className="text-center">{t("deposit.title")}</p>
+          </div>
+          <div className="mt-10">
+            <p className="text-center">{t("deposit.upload")}</p>
             <div className="flex justify-center mt-3">
-              {dataqr?.length > 0 ? (
-                <img
-                  src={`${process.env.NEXT_PUBLIC_API_URL}/images/${dataqr[0]?.qr}`}
-                  alt="profile"
-                  className="w-40 h-40 rounded-sm"
-                />
-              ) : (
-                <img
-                  src="/images/btc-qrcode.jpeg"
-                  alt="image"
-                  className="w-40 h-40"
-                />
-              )}
+
+              <img
+                src={currentCoints?.qrcode || coins[0]?.qrcode}
+                alt="image"
+                className="w-40 h-40"
+              />
+
             </div>
             <div className="border rounded border-slate-400/30 px-5 py-2 mt-5 text-sm text-gray-200">
               <div>
                 <div className="text-slate-400">{t("deposit.network")}:</div>{" "}
-                {dataqr[0]?.name || "BTC"}
+                {currentCoints?.type || coins[0]?.type}
               </div>
               <div className="border-t border-slate-400/30 my-2" />
               <div>
                 <div className="text-slate-400">{t("deposit.address")}:</div>{" "}
-                {dataqr[0]?.accountNumber ||
-                  "1FdiU4BTJWPpKxxaJpa2GZFfMPhjuZq9MV"}
+                {currentCoints?.account || coins[0]?.account}
               </div>
             </div>
             <div className="mt-5">
@@ -128,15 +127,22 @@ function Main() {
                 required
                 id="coin_type"
                 className="bg-gray-400 py-2.5 px-3 border border-gray-500 text-dark  text-sm rounded-lg focus:ring-blue-200 focus:border-blue-200 block w-full"
-                onChange={(e: any) =>
-                  setDeposit({ ...deposit, title: e.target.value })
+                onChange={(e: any) => {
+                  const value = e.target.value;
+                  const selectedCoin = coins.find((item) => item.type === value);
+                  setDeposit((prev) => ({
+                    ...prev,
+                    title: value,
+                    account: selectedCoin?.account || "",
+                  }));
+                }
                 }
               >
-                <option value="">--เลือกประเภทเลียน--</option>
-                {data.map((item, index) => {
+                <option value="">{t("deposit.select")}</option>
+                {coins.map((item, index) => {
                   return (
-                    <option key={index} value={item.title}>
-                      {item.title}
+                    <option key={index} value={item.type}>
+                      {item.type}
                     </option>
                   );
                 })}

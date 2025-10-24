@@ -196,6 +196,7 @@ const translations = {
     "deposit.upload": "Upload",
     "deposit.uploading": "Uploading...",
     "deposit.confirm": "Confirm",
+    "deposit.select": "Select",
 
     // Coin deposit:
     "coin_deposit.tittle": "Coin Wallet",
@@ -324,6 +325,7 @@ const translations = {
     "deposit.upload": "อัพโหลด",
     "deposit.uploading": "กำลังโหลด...",
     "deposit.confirm": "ยืนยัน",
+     "deposit.select": "เลือกประเภทเลียน",
 
     // Coin deposit:
     "coin_deposit.tittle": "กระเป๋าเหรียญ",
