@@ -35,11 +35,7 @@ export default function Layoutbackend({ children }: Props) {
             href="/backend"
             className="flex w-full justify-center  overflow-hidden"
           >
-            <img
-              src="/new-logo/logo.png"
-              alt="logo"
-              className="w-[60px] h-[60px] rounded-full border-4 shadow"
-            />
+            copytrade
           </Link>
         </div>
 

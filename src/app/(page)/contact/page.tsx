@@ -30,7 +30,7 @@ export default function page() {
                     href="mailto:support@cryptotradepro.com"
                     className="text-sm text-accent hover:text-accent/80 transition-colors font-medium"
                   >
-                    tbillion@gmail.com
+                    copytrade@gmail.com
                   </a>
                 </div>
               </div>

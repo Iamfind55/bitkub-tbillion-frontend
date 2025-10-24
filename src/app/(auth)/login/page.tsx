@@ -3,7 +3,7 @@ import { useTranslation } from "@/lib/i18n";
 import Link from "next/link";
 import FormLogin from "./formlogin";
 export default function page() {
-   const { t } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <div
@@ -23,9 +23,9 @@ export default function page() {
           <div className="col-span-12 md:col-span-12 lg:col-span-6 xl:col-span-5">
             <div className="min-h-screen py-5 bg-gray-800/90 backdrop-blur-sm text-white flex items-center justify-center">
               <div className="flex flex-col gap-6 sm:px-2 px-8 max-w-[500px]  min-w-[350px]">
-                <div className="flex justify-center items-center">
+                <div className="flex justify-center items-center text-3xl">
                   <Link href="/">
-                    <img src="/new-logo/logo.png" alt="" className="w-20 rounded-sm" />
+                    COPYTRADE
                   </Link>
                 </div>
                 <div className="text-3xl text-center font-bold">

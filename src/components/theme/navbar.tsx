@@ -115,13 +115,8 @@ export default function Navbar() {
       >
         <div className="mx-auto container flex items-center justify-between  px-5">
           <Link href="/" className="logo flex items-center">
-            <img
-              src="/new-logo/logo.png"
-              alt="logo"
-              className="h-8 w-8 lg:h-10 lg:w-10 rounded-sm"
-            />
             <span className="text-md sm:text-xl lg:text-2xl font-bold ml-2 select-none uppercase">
-              Tbillions
+              COPYTRADE
             </span>
           </Link>
 
@@ -288,7 +283,7 @@ export default function Navbar() {
           className="logo flex flex-col items-center"
         >
           <img src="/new-logo/logo.jpeg" alt="logo" className="h-20 w-20 rounded-sm" />
-          <span className="text-2xl font-bold ml-2 my-5">tbillions</span>
+          <span className="text-2xl font-bold ml-2 my-5">coyptrade</span>
         </Link>
 
         <button

@@ -17,13 +17,12 @@ function Footer() {
       <div className="w-full md:mt-5 grid grid-cols-6 md:grid-cols-6 gap-2">
         <div className="md:col-span-2 col-span-12 text-gray-300">
           <div className="py-2 logo flex items-center">
-            <img src="/new-logo/logo.png" alt="logo" className="h-10 w-10 rounded-sm" />
             <span className="lg:text-2xl text-xl font-bold ml-2 select-none uppercase">
-              Tbillions
+              COPYTRADE
             </span>
           </div>
           <div className="mt-3">
-            <p>Email: tbillion@gmail.com</p>
+            <p>Email: copytrade@gmail.com</p>
           </div>
         </div>
         <div className="md:col-span-2 col-span-12 mt-2 text-gray-300">
